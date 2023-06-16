@@ -2,5 +2,10 @@
   "i18n-ally.localesPaths": "public/locales",
   "i18n-ally.namespace": true,
   "i18n-ally.pathMatcher": "{locale}/{namespace}.json",
-  "i18n-ally.keystyle": "nested"
+  "i18n-ally.keystyle": "nested",
+  "editor.defaultFormatter": "vscode.typescript-language-features",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.run": "onSave"
 }
