@@ -4,22 +4,24 @@ module.exports = {
     es2021: true
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb-typescript',
+    "plugin:react/recommended",
+    "airbnb-typescript",
+    "plugin:i18next/recommended"
   ],
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
       jsx: true
     },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
     project: "./tsconfig.json"
   },
   plugins: [
-    'react',
-    '@typescript-eslint',
-    'import'
+    "react",
+    "@typescript-eslint",
+    "import",
+    "i18next"
   ],
   rules: {
     "no-unused-vars": "off",
@@ -33,8 +35,9 @@ module.exports = {
       "submit": true,
       "reset": true
     }],
-    'import/no-extraneous-dependencies': "off",
-    '@typescript-eslint/naming-convention': "off"
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "i18next/no-literal-string": ["error", { mode: "jsx-text-only" }]
   },
   settings: {
     "react": {

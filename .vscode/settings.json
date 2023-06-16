@@ -3,9 +3,19 @@
   "i18n-ally.namespace": true,
   "i18n-ally.pathMatcher": "{locale}/{namespace}.json",
   "i18n-ally.keystyle": "nested",
+  "stylelint.snippet": ["css", "less", "postcss", "scss"],
+  "stylelint.validate": ["css", "less", "postcss", "scss"],
   "editor.defaultFormatter": "vscode.typescript-language-features",
+  "editor.detectIndentation": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
   },
-  "eslint.run": "onSave"
+  "eslint.run": "onType",
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+  },
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false
 }
