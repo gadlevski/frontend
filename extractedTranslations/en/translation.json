@@ -2,6 +2,9 @@
   "about": {
     "title": "title"
   },
+  "common": {
+    "notFound": "notFound"
+  },
   "main": {
     "text": "text"
   }

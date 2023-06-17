@@ -1,5 +1,6 @@
 {
   "common": {
     "language": "English"
-  }
+  },
+  "common.notFound": "Page Not Found"
 }
