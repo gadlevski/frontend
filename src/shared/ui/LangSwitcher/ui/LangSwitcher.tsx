@@ -20,7 +20,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
       theme={ThemeButton.CLEAR}
       onClick={toggle}
     >
-      {t('common.language')}
+      {t('language')}
     </Button>
   );
 };

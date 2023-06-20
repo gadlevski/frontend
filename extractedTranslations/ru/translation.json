@@ -1,11 +1,9 @@
 {
-  "about": {
-    "title": "title"
-  },
-  "common": {
-    "notFound": "notFound"
-  },
-  "main": {
-    "text": "text"
-  }
+  "error": "error",
+  "generateError": "generateError",
+  "notFound": "notFound",
+  "reload": "reload",
+  "title": "title",
+  "toggle": "toggle",
+  "Сгенерировать ошибку": "Сгенерировать ошибку"
 }

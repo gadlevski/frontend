@@ -1,9 +1,10 @@
-import { FC, useState } from 'react';
+import { FC, Suspense, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Sidebar.module.scss';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { Button } from 'shared/ui/Button/Button';
+import { LangSwitcher } from 'shared/ui/LangSwitcher';
+import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import cls from './Sidebar.module.scss';
+import { useTranslation } from 'react-i18next';
 
 interface SidebarProps {
   className?: string;
@@ -11,6 +12,7 @@ interface SidebarProps {
 
 export const Sidebar: FC<SidebarProps> = ({ className }) => {
   const [isCollapsed, setCollapsed] = useState<boolean>(false);
+  const { t } = useTranslation('common');
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
@@ -20,10 +22,12 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
         className,
       ])}
     >
-      <Button type='button' onClick={onToggle}>toggle</Button>
+      <Button type='button' onClick={onToggle}>{t('toggle')}</Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
-        <LangSwitcher className={cls.lang} />
+        <Suspense fallback="">
+          <LangSwitcher className={cls.lang} />
+        </Suspense>
       </div>
     </div>
   );

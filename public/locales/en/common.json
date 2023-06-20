@@ -1,6 +1,8 @@
 {
-  "common": {
-    "language": "English"
-  },
-  "common.notFound": "Page Not Found"
+  "notFound": "Page Not Found",
+  "language": "English",
+  "error": "An error has occurred",
+  "reload": "Relaod Page",
+  "generateError": "Generate Error",
+  "toggle": "Toggle"
 }

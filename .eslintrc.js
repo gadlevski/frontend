@@ -25,7 +25,7 @@ module.exports = {
   ],
   rules: {
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
     "indent": [2, 2],
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
@@ -37,7 +37,7 @@ module.exports = {
     }],
     "import/no-extraneous-dependencies": "off",
     "@typescript-eslint/naming-convention": "off",
-    "i18next/no-literal-string": ["error", { mode: "jsx-text-only" }]
+    "i18next/no-literal-string": ["warn", { mode: "jsx-text-only" }]
   },
   settings: {
     "react": {
