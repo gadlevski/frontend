@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from "path";
+
 export default {
   // Автоматически очищать вызовы, экземпляры, контексты и результаты моков перед каждым тестом
   clearMocks: true,
@@ -15,8 +17,6 @@ export default {
   // Массив расширений файлов, используемых модулями
   moduleFileExtensions: [
     'js',
-    'mjs',
-    'cjs',
     'jsx',
     'ts',
     'tsx',
@@ -33,6 +33,21 @@ export default {
   ],
   // Корневой каталог, который Jest должен сканировать для поиска тестов и модулей
   rootDir: '../../',
+
+  // свойство для указания файлов, которые будут загружены после установки тестового окружения, но перед запуском тестов.
+  // В этом случае, одним из таких файлов является 'setupTests.ts'
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+
+  // свойство определяет пути, в которых Jest будет искать модули.
+  // В данном случае, Jest будет искать модули в папке 'src', расположенной в корневой директории проекта.
+  modulePaths: [
+    '<rootDir>src',
+  ],
+
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+  },
 
   // Все импортированные модули в ваших тестах должны автоматически имитироваться
   // automock: false,
