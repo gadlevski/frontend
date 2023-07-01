@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from "path";
+import path from 'path';
 
 export default {
   // Автоматически очищать вызовы, экземпляры, контексты и результаты моков перед каждым тестом

@@ -14,7 +14,6 @@ interface ErrorPageProps extends FallbackProps {
 export const ErrorPage: FC<ErrorPageProps> = (props) => {
   const { className, error, resetErrorBoundary } = props;
   console.log('error', error);
-  // console.log('error', error);
 
   const { t } = useTranslation('common');
 

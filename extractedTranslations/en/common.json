@@ -1,4 +1,8 @@
 {
+  "error": "",
+  "generateError": "",
   "language": "language",
+  "notFound": "",
+  "reload": "",
   "toggle": ""
 }

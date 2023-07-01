@@ -3,11 +3,7 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: [
-    "plugin:react/recommended",
-    "airbnb-typescript",
-    "plugin:i18next/recommended"
-  ],
+  extends: ["plugin:react/recommended", "airbnb-typescript", "plugin:i18next/recommended", "plugin:storybook/recommended"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -17,15 +13,12 @@ module.exports = {
     sourceType: "module",
     project: "./tsconfig.json"
   },
-  plugins: [
-    "react",
-    "@typescript-eslint",
-    "import",
-    "i18next"
-  ],
+  plugins: ["react", "@typescript-eslint", "import", "i18next"],
   rules: {
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-unused-vars": ["warn", {
+      "argsIgnorePattern": "^_"
+    }],
     "indent": [2, 2],
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
@@ -37,7 +30,9 @@ module.exports = {
     }],
     "import/no-extraneous-dependencies": "off",
     "@typescript-eslint/naming-convention": "off",
-    "i18next/no-literal-string": ["warn", { mode: "jsx-text-only" }]
+    "i18next/no-literal-string": ["warn", {
+      mode: "jsx-text-only"
+    }]
   },
   settings: {
     "react": {
