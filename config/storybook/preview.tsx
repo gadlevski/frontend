@@ -20,29 +20,12 @@ const preview: Preview = {
       },
     },
   },
-  globalTypes: {
-    theme: {
-      description: 'Глобальная тема для компонентов',
-      defaultValue: 'light',
-      toolbar: {
-        title: 'Тема',
-        icon: 'circlehollow',
-        items: [
-          { value: 'light', title: 'Светлая' },
-          { value: 'dark', title: 'Темная' },
-        ],
-        dynamicTitle: true,
-      },
-    },
-  },
   decorators: [
-    (Story, context) => {
+    (Story) => {
       return (
         <BrowserRouter>
           <ThemeProvider>
-            <div className={`app ${context.globals.theme || 'light'}`}>
-              <Story />
-            </div>
+            <Story />
           </ThemeProvider>
         </BrowserRouter>
       );
