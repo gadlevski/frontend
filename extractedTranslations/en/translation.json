@@ -1,6 +1,8 @@
 {
+  "about us": "about us",
   "error": "error",
   "generateError": "generateError",
+  "main": "main",
   "notFound": "notFound",
   "reload": "reload",
   "title": "title",
