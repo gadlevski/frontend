@@ -13,10 +13,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const AboutPageLight: Story = {
+  name: 'AboutPage (Светлая тема)',
   decorators: withTheme(Theme.LIGHT),
 };
 
 export const AboutPageDark: Story = {
+  name: 'AboutPage (Темная тема)',
   decorators: withTheme(Theme.DARK),
 };
 
