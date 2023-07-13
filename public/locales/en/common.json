@@ -1,6 +1,7 @@
 {
   "notFound": "Page Not Found",
   "language": "English",
+  "language_shot": "en",
   "error": "An error has occurred",
   "reload": "Relaod Page",
   "generateError": "Generate Error",
