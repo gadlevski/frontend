@@ -11,6 +11,5 @@ describe('Кнопка', () => {
   test('Текст внутри и класс', () => {
     render(<Button theme={ThemeButton.CLEAR}>TEST</Button>);
     expect(screen.getByText('TEST')).toHaveClass('clear');
-    screen.debug();
   });
 });
