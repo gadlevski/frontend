@@ -13,27 +13,36 @@ jobs:
         node-version: [ 17.x ]
     steps:
       - uses: actions/checkout@v2
+
       - name: Starting NodeJS ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with: 
           node-version: ${{ matrix.node-version }}
-      - name: install modules
-        run: npm install --force
-      - name: build production project
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build production project
         if: always()
-        run: npm run build:prod      
-      - name: linting typescript
+        run: npm run build:prod
+
+      - name: Linting typescript with Eslint
         if: always()
-        run: npm run eslint
-      - name: linting scss
+        run: npm run lint:ts
+
+      - name: Linting scss with Stylelint
         if: always()
-        run: npm run stylelint
-      - name: unit testing
+        run: npm run lint:scss
+
+      - name: Unit testing with Jest
         if: always()
-        run: npm run jest
-      - name: ui testing
-        if: always()
-        run: npm run test:ui:ci
+        run: npm run test:unit
+
+      - name: Capture current screenshots with Storycap
+        run: npm run storycap:current
+
+      - name: Compare screenshots with reg-cli
+        run: npm run test:ui
 
       
       

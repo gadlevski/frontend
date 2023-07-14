@@ -1,0 +1,10 @@
+{
+  "core": {
+    "actualDir": "./__screenshots__/actual",
+    "expectedDir": "./__screenshots__/expected",
+    "diffDir": "./__screenshots__/diff"
+  },
+  "plugins": {
+    "reg-keygen-git-hash-plugin": {}
+  }
+}
