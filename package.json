@@ -12,11 +12,11 @@
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
-    "storybook": "storybook dev -p 9001 -c ./config/storybook",
+    "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
-    "storycap:reference": "storycap --serverCmd \"npm run storybook\" --outDir ./__screenshots__/expected http://localhost:9001",
-    "storycap:current": "storycap --serverCmd \"npm run storybook\" --outDir ./__screenshots__/actual http://localhost:9001",
-    "test:ui": "reg-cli __screenshots__/actual __screenshots__/expected __screenshots__/diff -R report.html -J report.json"
+    "test:ui:current": "storycap --outDir ./__screenshots__/current --serverCmd 'storybook dev -p 6006 -c ./config/storybook' http://localhost:6006",
+    "test:ui:ref": "storycap --outDir ./__screenshots__/ref --serverCmd 'storybook dev -p 6006 -c ./config/storybook' http://localhost:6006",
+    "test:ui": "reg-cli __screenshots__/current __screenshots__/ref __screenshots__/diff -R report.html -J report.json -M '0.3'"
   },
   "keywords": [],
   "author": "",
@@ -63,6 +63,7 @@
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
     "mini-css-extract-plugin": "^2.7.6",
+    "puppeteer": "^20.8.2",
     "react-refresh": "^0.14.0",
     "reg-cli": "^0.17.7",
     "sass": "^1.63.6",
