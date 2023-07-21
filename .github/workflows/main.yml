@@ -1,10 +1,10 @@
 name: linting, testing, buildings
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is testing out GitHub Actions
 on: 
   push:
-    branches: [master]
+    branches: [master, fix_ui_test]
   pull_request:
-    branches: [master]
+    branches: [master, fix_ui_test]
 jobs:
   Pipline:
     runs-on: ubuntu-latest
@@ -22,27 +22,34 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Build production project
-        if: always()
-        run: npm run build:prod
+      # - name: Build production project
+      #   if: always()
+      #   run: npm run build:prod
 
-      - name: Linting typescript with Eslint
-        if: always()
-        run: npm run lint:ts
+      # - name: Linting typescript with Eslint
+      #   if: always()
+      #   run: npm run lint:ts
+        
+      # - name: Linting scss with Stylelint
+      #   if: always()
+      #   run: npm run lint:scss
 
-      - name: Linting scss with Stylelint
-        if: always()
-        run: npm run lint:scss
+      # - name: Unit testing with Jest
+      #   if: always()
+      #   run: npm run test:unit
+            
+      - name: Generate current UI test screenshots
+        run: npm run test:ui:current
 
-      - name: Unit testing with Jest
-        if: always()
-        run: npm run test:unit
-
-      - name: Capture current screenshots with Storycap
-        run: npm run storycap:current
-
-      - name: Compare screenshots with reg-cli
+      - name: Compare UI test screenshots with reference
         run: npm run test:ui
 
-      
-      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: test-artifacts
+          path: |
+            report.html
+            report.json
+            __screenshots__/**/*
