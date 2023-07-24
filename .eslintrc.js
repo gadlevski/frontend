@@ -3,7 +3,13 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ["plugin:react/recommended", "airbnb-typescript", "plugin:i18next/recommended", "plugin:storybook/recommended"],
+  extends: [
+    "plugin:react/recommended",
+    "airbnb-typescript",
+    "plugin:i18next/recommended",
+    "plugin:storybook/recommended",
+    "plugin:react-hooks/recommended"
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -38,5 +44,13 @@ module.exports = {
     "react": {
       "version": "detect"
     }
-  }
+  },
+  overrides: [
+    {
+      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+      rules: {
+        'max-len': 'off',
+      },
+    },
+  ],
 };

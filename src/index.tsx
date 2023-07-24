@@ -8,6 +8,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import 'shared/config/i18n/i18n';
 import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
 import { ErrorPage } from 'widgets/ErrorPage';
+import './app/styles/index.scss';
 
 render(
   <BrowserRouter>

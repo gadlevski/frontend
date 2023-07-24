@@ -10,7 +10,7 @@ const meta = {
     theme: {
       control: {
         type: 'radio',
-        options: [ThemeButton.CLEAR, ThemeButton.OUTLINE],
+        options: Object.values(ThemeButton),
       },
     },
   },
@@ -31,6 +31,15 @@ export const Clear: Story = {
     children: 'Button Clear',
     theme: ThemeButton.CLEAR,
   },
+  decorators: withTheme(Theme.LIGHT),
+};
+
+export const ClearInverted: Story = {
+  args: {
+    children: 'Button Clear Inverted',
+    theme: ThemeButton.CLEAR_INVERTED,
+  },
+  decorators: withTheme(Theme.DARK),
 };
 
 export const Outline: Story = {
