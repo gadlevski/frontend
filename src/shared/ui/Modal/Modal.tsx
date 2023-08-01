@@ -1,7 +1,7 @@
 import { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Modal.module.scss';
 import { Portal } from 'shared/ui/Portal/Portal';
+import cls from './Modal.module.scss';
 
 interface ModalProps {
   className?: string;
@@ -13,7 +13,6 @@ const ANIMATION_DELAY = 300;
 
 export const Modal: FC<ModalProps> = (props) => {
   const { className, children, isOpen, onClose } = props;
-
   const [isClosing, setIsClosing] = useState<boolean>(false);
   const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -51,7 +50,6 @@ export const Modal: FC<ModalProps> = (props) => {
       window.removeEventListener('keydown', onKeyDownHandler);
     };
   }, [isOpen, onKeyDownHandler]);
-
 
   return (
     <Portal>
