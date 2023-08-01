@@ -1,12 +1,15 @@
 {
   "about us": "about us",
+  "decrement": "decrement",
   "error": "error",
   "generateError": "generateError",
+  "increment": "increment",
   "login": "login",
   "main": "main",
   "notFound": "notFound",
   "reload": "reload",
   "title": "title",
   "toggle": "toggle",
+  "value": "value",
   "Сгенерировать ошибку": "Сгенерировать ошибку"
 }

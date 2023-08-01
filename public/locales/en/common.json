@@ -5,5 +5,8 @@
   "error": "An error has occurred",
   "reload": "Relaod Page",
   "generateError": "Generate Error",
-  "toggle": "Toggle"
+  "toggle": "Toggle",
+  "value": "Value",
+  "increment": "increment",
+  "decrement": "decrement"
 }

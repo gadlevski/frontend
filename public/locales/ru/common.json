@@ -5,5 +5,8 @@
   "error": "Произошла ошибка",
   "reload": "Перезагрузить страницу",
   "generateError": "Генерировать ошибку",
-  "toggle": "Переключить"
+  "toggle": "Переключить",
+  "value": "Значение",
+  "increment": "increment",
+  "decrement": "decrement"
 }

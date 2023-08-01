@@ -9,20 +9,23 @@ import 'shared/config/i18n/i18n';
 import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
 import { ErrorPage } from 'widgets/ErrorPage';
 import './app/styles/index.scss';
+import { StoreProvider } from 'app/providers/StoreProvider';
 
 render(
-  <BrowserRouter>
-    <ErrorBoundary
-      FallbackComponent={({ error, resetErrorBoundary }) => (
-        <ErrorPage error={error} resetErrorBoundary={resetErrorBoundary} />
-      )}
-    >
-      <ThemeProvider>
-        <Suspense fallback={<PageLoader />}>
-          <App />
-        </Suspense>
-      </ThemeProvider>
-    </ErrorBoundary>
-  </BrowserRouter>,
+  <StoreProvider>
+    <BrowserRouter>
+      <ErrorBoundary
+        FallbackComponent={({ error, resetErrorBoundary }) => (
+          <ErrorPage error={error} resetErrorBoundary={resetErrorBoundary} />
+        )}
+      >
+        <ThemeProvider>
+          <Suspense fallback={<PageLoader />}>
+            <App />
+          </Suspense>
+        </ThemeProvider>
+      </ErrorBoundary>
+    </BrowserRouter>
+  </StoreProvider>,
   document.getElementById('root'),
 );
