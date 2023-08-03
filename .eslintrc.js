@@ -21,24 +21,26 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint", "import", "i18next"],
   rules: {
-    "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["warn", {
       "argsIgnorePattern": "^_"
     }],
     "indent": [2, 2],
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
-    "react/react-in-jsx-scope": "off",
     "react/button-has-type": [1, {
       "button": true,
       "submit": true,
       "reset": true
     }],
-    "import/no-extraneous-dependencies": "off",
-    "@typescript-eslint/naming-convention": "off",
     "i18next/no-literal-string": ["warn", {
       mode: "jsx-text-only"
-    }]
+    }],
+    "no-unused-vars": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/display-name": "off",
+    "react/prop-types": "off"
   },
   settings: {
     "react": {

@@ -39,7 +39,7 @@ jobs:
         run: npm run test:unit
             
       - name: Generate current UI test screenshots
-        run: npm run test:ui:current
+        run: npm run current
 
       - name: Compare UI test screenshots with reference
         run: npm run test:ui

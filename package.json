@@ -15,8 +15,8 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
-    "test:ui:current": "storycap --outDir ./__screenshots__/current --serverCmd 'storybook dev -p 6006 -c ./config/storybook' http://localhost:6006",
-    "test:ui:ref": "storycap --outDir ./__screenshots__/ref --serverCmd 'storybook dev -p 6006 -c ./config/storybook' http://localhost:6006",
+    "current": "storycap --outDir ./__screenshots__/current --serverCmd 'storybook dev -p 6006 -c ./config/storybook' http://localhost:6006",
+    "ref": "storycap --outDir ./__screenshots__/ref --serverCmd 'storybook dev -p 6006 -c ./config/storybook' http://localhost:6006",
     "test:ui": "reg-cli __screenshots__/current __screenshots__/ref __screenshots__/diff -R report.html -J report.json -M '0.3'"
   },
   "keywords": [],
