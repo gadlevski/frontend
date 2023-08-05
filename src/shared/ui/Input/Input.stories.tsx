@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-import { withTheme } from 'shared/config/storybook/withTheme';
+import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Input } from './Input';
 
 const meta = {
@@ -17,7 +17,7 @@ export const InputLight: Story = {
     placeholder: 'Label',
     value: 'Some text InputLight',
   },
-  decorators: withTheme(Theme.LIGHT),
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const InputDark: Story = {
@@ -25,6 +25,6 @@ export const InputDark: Story = {
     placeholder: 'Label',
     value: 'Some text InputDark',
   },
-  decorators: withTheme(Theme.DARK),
+  decorators: [themeDecorator(Theme.DARK)],
 };
 

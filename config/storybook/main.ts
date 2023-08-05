@@ -1,6 +1,6 @@
 import type { StorybookConfig } from '@storybook/react-webpack5';
 import path from 'path';
-import { RuleSetRule } from 'webpack';
+import { DefinePlugin, RuleSetRule } from 'webpack';
 import { BuildPaths } from '../build/types/config';
 
 
@@ -37,8 +37,12 @@ const config: StorybookConfig = {
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
+    storybookWebpackConfig.plugins.push(new DefinePlugin({
+      __IS_DEV__: true,
+    }));
     return storybookWebpackConfig;
   },
+  staticDirs: ['../../public'],
 };
 
 export default config;

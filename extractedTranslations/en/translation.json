@@ -1,9 +1,18 @@
 {
+  "Authorization form": "Authorization form",
+  "Authorization form error": "Authorization form error",
+  "Enter password": "Enter password",
+  "Enter username": "Enter username",
   "about us": "about us",
+  "common": {
+    "Authorization form error": ""
+  },
   "decrement": "decrement",
   "error": "error",
   "generateError": "generateError",
+  "go out": "go out",
   "increment": "increment",
+  "log out": "log out",
   "login": "login",
   "main": "main",
   "notFound": "notFound",

@@ -1,9 +1,17 @@
 {
+  "Authorization form": "",
+  "Authorization form error": "",
+  "Enter password": "",
+  "Enter username": "",
+  "decrement": "",
   "error": "",
   "generateError": "",
-  "language": "language",
+  "increment": "",
+  "language": "language1",
   "language_shot": "",
+  "login": "",
   "notFound": "",
   "reload": "",
-  "toggle": ""
+  "toggle": "",
+  "value": ""
 }

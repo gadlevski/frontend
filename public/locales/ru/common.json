@@ -1,12 +1,17 @@
 {
   "notFound": "Страница не найдена",
   "language": "Русский",
-  "language_shot": "ru",
+  "language_shot": "Ру",
   "error": "Произошла ошибка",
   "reload": "Перезагрузить страницу",
   "generateError": "Генерировать ошибку",
   "toggle": "Переключить",
   "value": "Значение",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "login": "Войти",
+  "Authorization form": "Форма авторизации",
+  "Enter username": "Введите логин",
+  "Enter password": "Введите пароль",
+  "Authorization form error": "Вы ввели неверный логин или пароль"
 }

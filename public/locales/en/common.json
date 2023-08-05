@@ -8,5 +8,10 @@
   "toggle": "Toggle",
   "value": "Value",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "login": "Login",
+  "Authorization form": "Authorization form",
+  "Enter username": "Enter your username",
+  "Enter password": "Enter the password",
+  "Authorization form error": "Invalid username or password"
 }

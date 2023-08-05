@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-import { withTheme } from 'shared/config/storybook/withTheme';
+import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Modal } from './Modal';
 
 const meta = {
@@ -22,7 +22,7 @@ export const ModalLight: Story = {
     isOpen: true,
     children: 'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem',
   },
-  decorators: withTheme(Theme.LIGHT),
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const ModalDark: Story = {
@@ -30,5 +30,5 @@ export const ModalDark: Story = {
     isOpen: true,
     children: 'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ',
   },
-  decorators: withTheme(Theme.DARK),
+  decorators: [themeDecorator(Theme.DARK)],
 };

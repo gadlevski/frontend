@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ErrorPage } from './ErrorPage';
-import { withTheme } from 'shared/config/storybook/withTheme';
+import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 
 const meta = {
@@ -17,7 +17,7 @@ export const ErrorPageLight: Story = {
     error: new Error('Sample Error Message'),
     resetErrorBoundary: () => console.log('Reset error boundary'),
   },
-  decorators: withTheme(Theme.LIGHT),
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 
@@ -26,6 +26,6 @@ export const ErrorPageDark: Story = {
     error: new Error('Sample Error Message'),
     resetErrorBoundary: () => console.log('Reset error boundary'),
   },
-  decorators: withTheme(Theme.DARK),
+  decorators: [themeDecorator(Theme.DARK)],
 };
 

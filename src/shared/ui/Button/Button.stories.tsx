@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-import { withTheme } from 'shared/config/storybook/withTheme';
+import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { Button, ButtonSize, ThemeButton } from './Button';
 
 const meta = {
@@ -31,7 +31,7 @@ export const Clear: Story = {
     children: 'Button Clear',
     theme: ThemeButton.CLEAR,
   },
-  decorators: withTheme(Theme.LIGHT),
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const ClearInverted: Story = {
@@ -39,7 +39,7 @@ export const ClearInverted: Story = {
     children: 'Button Clear Inverted',
     theme: ThemeButton.CLEAR_INVERTED,
   },
-  decorators: withTheme(Theme.DARK),
+  decorators: [themeDecorator(Theme.DARK)],
 };
 
 export const Outline: Story = {
@@ -47,7 +47,7 @@ export const Outline: Story = {
     children: 'Button Outline',
     theme: ThemeButton.OUTLINE,
   },
-  decorators: withTheme(Theme.LIGHT),
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const OutlineSizeL: Story = {
@@ -56,7 +56,7 @@ export const OutlineSizeL: Story = {
     theme: ThemeButton.OUTLINE,
     size: ButtonSize.L,
   },
-  decorators: withTheme(Theme.LIGHT),
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const OutlineSizeXl: Story = {
@@ -65,7 +65,7 @@ export const OutlineSizeXl: Story = {
     theme: ThemeButton.OUTLINE,
     size: ButtonSize.XL,
   },
-  decorators: withTheme(Theme.LIGHT),
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const OutlineDark: Story = {
@@ -73,7 +73,7 @@ export const OutlineDark: Story = {
     children: 'Button Outline Dark',
     theme: ThemeButton.OUTLINE,
   },
-  decorators: withTheme(Theme.DARK),
+  decorators: [themeDecorator(Theme.DARK)],
 };
 
 export const BackgroundTheme: Story = {
@@ -81,7 +81,7 @@ export const BackgroundTheme: Story = {
     children: 'Button BackgroundTheme',
     theme: ThemeButton.BACKGROUND,
   },
-  decorators: withTheme(Theme.LIGHT),
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const BackgroundInverted: Story = {
@@ -89,7 +89,7 @@ export const BackgroundInverted: Story = {
     children: 'Button BackgroundInverted',
     theme: ThemeButton.BACKGROUND_INVERTED,
   },
-  decorators: withTheme(Theme.LIGHT),
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const Square: Story = {
@@ -98,7 +98,7 @@ export const Square: Story = {
     theme: ThemeButton.BACKGROUND_INVERTED,
     square: true,
   },
-  decorators: withTheme(Theme.LIGHT),
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const SquareSizeL: Story = {
@@ -108,7 +108,7 @@ export const SquareSizeL: Story = {
     square: true,
     size: ButtonSize.L,
   },
-  decorators: withTheme(Theme.LIGHT),
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const SquareSizeXl: Story = {
@@ -118,5 +118,14 @@ export const SquareSizeXl: Story = {
     square: true,
     size: ButtonSize.XL,
   },
-  decorators: withTheme(Theme.LIGHT),
+  decorators: [themeDecorator(Theme.LIGHT)],
+};
+
+export const Disabled: Story = {
+  args: {
+    children: 'Button Disabled',
+    theme: ThemeButton.CLEAR,
+    disabled: true,
+  },
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
