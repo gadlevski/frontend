@@ -7,11 +7,11 @@ import { userActions } from 'entities/User/model/slice/userSlice';
 import { useEffect } from 'react';
 
 const App = () => {
-  const dispath = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispath(userActions.initAuthdata());
-  }, [dispath]);
+    dispatch(userActions.initAuthdata());
+  }, [dispatch]);
 
   return (
     <div className={classNames('app', {}, [])}>

@@ -16,7 +16,7 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation('link');
   const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
-  const dispath = useAppDispatch();
+  const dispatch = useAppDispatch();
   const authData = useSelector(getUserAuthData);
 
   const onCloseModal = useCallback(() => {
@@ -28,9 +28,9 @@ export const Navbar = ({ className }: NavbarProps) => {
   }, []);
 
   const onLogout = useCallback(() => {
-    dispath(userActions.logout());
+    dispatch(userActions.logout());
     // setIsAuthModal(true);
-  }, [dispath]);
+  }, [dispatch]);
 
 
   if (authData) {
@@ -49,7 +49,8 @@ export const Navbar = ({ className }: NavbarProps) => {
       <Button onClick={onShowModal} theme={ThemeButton.OUTLINE} className={cls.links}>
         {t('login')}
       </Button>
-      <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+
     </div>
   );
 };

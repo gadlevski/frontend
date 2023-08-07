@@ -7,16 +7,16 @@ import { getCounterValue } from '../model/selectors/getCounterValue/getCounterVa
 import { counterActions } from '../model/slice/counterSlice';
 
 export const Counter: FC = () => {
-  const dispath = useAppDispatch();
+  const dispatch = useAppDispatch();
   const counterValue = useSelector(getCounterValue);
   const { t } = useTranslation('common');
 
   const increment = () => {
-    dispath(counterActions.increment());
+    dispatch(counterActions.increment());
   };
 
   const decrement = () => {
-    dispath(counterActions.decrement());
+    dispatch(counterActions.decrement());
   };
   return (
     <div>

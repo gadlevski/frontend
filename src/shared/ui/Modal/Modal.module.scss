@@ -20,8 +20,8 @@
   padding: 20px;
   border-radius: 12px;
   background: var(--bg-color);
-  transition: 0.05s transform;
-  transform: scale(0.5);
+  transition: 0.1s transform;
+  transform: scale(0.9);
   max-width: 60%;
 }
 
@@ -37,6 +37,6 @@
 
 .isClosing {
   .content {
-    transform: scale(0.2);
+    transform: scale(0.9);
   }
 }
