@@ -40,7 +40,8 @@ module.exports = {
     "@typescript-eslint/naming-convention": "off",
     "import/no-extraneous-dependencies": "off",
     "react/display-name": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "@typescript-eslint/lines-between-class-members": "off"
   },
   settings: {
     "react": {
