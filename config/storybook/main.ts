@@ -42,7 +42,7 @@ const config: StorybookConfig = {
     }));
     return storybookWebpackConfig;
   },
-  staticDirs: ['../../public'],
+  staticDirs: [path.resolve(__dirname, '..', '..', 'public')],
 };
 
 export default config;
