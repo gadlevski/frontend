@@ -21,4 +21,3 @@ export const MainPageDark: Story = {
   name: 'MainPage (Темная тема)',
   decorators: [themeDecorator(Theme.DARK)],
 };
-

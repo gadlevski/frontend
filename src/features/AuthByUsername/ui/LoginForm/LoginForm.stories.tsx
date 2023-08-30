@@ -15,23 +15,27 @@ type Story = StoryObj<typeof meta>;
 export const LoginFormLight: Story = {
   decorators: [
     themeDecorator(Theme.LIGHT),
-    storeDecorator({ loginForm: { username: 'admin', password: '123' } })],
+    storeDecorator({ loginForm: { username: 'admin', password: '123' } }),
+  ],
 };
 
 export const LoginFormDark: Story = {
   decorators: [
     themeDecorator(Theme.DARK),
-    storeDecorator({ loginForm: { username: 'admin', password: '123' } })],
+    storeDecorator({ loginForm: { username: 'admin', password: '123' } }),
+  ],
 };
 
 export const LoginFormWithError: Story = {
   decorators: [
     themeDecorator(Theme.LIGHT),
-    storeDecorator({ loginForm: { username: 'admin', password: '123', error: 'error' } })],
+    storeDecorator({ loginForm: { username: 'admin', password: '123', error: 'error' } }),
+  ],
 };
 
 export const LoginFormLoading: Story = {
   decorators: [
     themeDecorator(Theme.LIGHT),
-    storeDecorator({ loginForm: { isLoading: true } })],
+    storeDecorator({ loginForm: { isLoading: true } }),
+  ],
 };

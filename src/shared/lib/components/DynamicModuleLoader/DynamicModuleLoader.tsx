@@ -1,7 +1,7 @@
 import { Reducer } from '@reduxjs/toolkit';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
 import { StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
-import { FC, useEffect } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 import { useStore } from 'react-redux';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch';
 
@@ -12,9 +12,9 @@ export type ReducersList = {
 type ReducersListEntry = [StateSchemaKey, Reducer];
 
 interface DynamicModuleLoaderProps {
-  name: StateSchemaKey;
   reducers: ReducersList;
   removeAfterUnmount?: boolean;
+  children?: ReactNode;
 }
 
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
@@ -25,15 +25,15 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
   useEffect(() => {
 
     Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
-      dispatch({ type: `@INIT ${name} reducer` });
       store.reducerManager.add(name, reducer);
+      dispatch({ type: `@INIT ${name} reducer` });
     });
 
     return () => {
       if (removeAfterUnmount) {
         Object.entries(reducers).forEach(([name]: ReducersListEntry) => {
-          dispatch({ type: `@DESTROY ${name} reducer` });
           store.reducerManager.remove(name);
+          dispatch({ type: `@DESTROY ${name} reducer` });
         });
       }
     };

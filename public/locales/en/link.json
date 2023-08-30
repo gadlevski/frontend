@@ -1,6 +1,7 @@
 {
   "main": "Main",
-  "about us": "About Us",
+  "about": "About Us",
   "login": "Login",
+  "profile": "Profile",
   "log out": "Log Out"
 }

@@ -16,6 +16,7 @@ import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
+  onSuccess: () => void;
   className?: string;
 }
 
@@ -24,7 +25,7 @@ const initialReducers: ReducersList = {
 };
 
 const LoginForm: FC<LoginFormProps> = memo((props) => {
-  const { className } = props;
+  const { className, onSuccess } = props;
   const { t } = useTranslation('common');
 
   const dispatch = useAppDispatch();
@@ -41,12 +42,15 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
     dispatch(loginActions.setPassword(value));
   }, [dispatch]);
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
-  }, [dispatch, password, username]);
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  }, [dispatch, onSuccess, password, username]);
 
   return (
-    <DynamicModuleLoader name='loginForm' reducers={initialReducers} removeAfterUnmount={true}>
+    <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Authorization form')} />
         {error && <Text text={t('Authorization form error')} theme={ThemeText.ERROR} />}

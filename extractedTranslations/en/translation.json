@@ -16,6 +16,7 @@
   "login": "login",
   "main": "main",
   "notFound": "notFound",
+  "profile": "profile",
   "reload": "reload",
   "title": "title",
   "toggle": "toggle",
