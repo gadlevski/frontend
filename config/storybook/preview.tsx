@@ -1,10 +1,9 @@
 import type { Preview } from '@storybook/react';
+import { I18nextProvider } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
 import '../../src/app/styles/index.scss';
-import { I18nextProvider } from 'react-i18next';
-// import i18n from 'shared/config/i18n/i18nForTests';
-import i18n from 'shared/config/i18n/i18n';
 import { Suspense } from 'react';
+import i18n from 'shared/config/i18n/i18n';
 
 const preview: Preview = {
   parameters: {

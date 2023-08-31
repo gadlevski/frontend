@@ -38,7 +38,8 @@ const config: StorybookConfig = {
       use: ['@svgr/webpack'],
     });
     storybookWebpackConfig.plugins.push(new DefinePlugin({
-      __IS_DEV__: true,
+      __IS_DEV__: JSON.stringify(true),
+      __API__: JSON.stringify(''),
     }));
     return storybookWebpackConfig;
   },
