@@ -67,7 +67,6 @@
     "jest-environment-jsdom": "^29.5.0",
     "json-server": "^0.17.3",
     "mini-css-extract-plugin": "^2.7.6",
-    "puppeteer": "^20.8.2",
     "react-refresh": "^0.14.0",
     "reg-cli": "^0.17.7",
     "sass": "^1.63.6",
