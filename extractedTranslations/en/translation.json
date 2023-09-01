@@ -8,6 +8,7 @@
     "Authorization form error": ""
   },
   "decrement": "decrement",
+  "edit": "edit",
   "error": "error",
   "generateError": "generateError",
   "go out": "go out",
@@ -21,5 +22,7 @@
   "title": "title",
   "toggle": "toggle",
   "value": "value",
+  "yourLastname": "yourLastname",
+  "yourName": "yourName",
   "Сгенерировать ошибку": "Сгенерировать ошибку"
 }

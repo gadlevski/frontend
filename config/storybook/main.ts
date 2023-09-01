@@ -25,19 +25,20 @@ const config: StorybookConfig = {
       entry: '',
       src: path.resolve(__dirname, '..', '..', 'src'),
     };
-    storybookWebpackConfig.resolve.modules.push(paths.src);
-    storybookWebpackConfig.resolve.extensions.push('.ts', '.tsx');
-    storybookWebpackConfig.module.rules = storybookWebpackConfig.module.rules.map((rule: RuleSetRule) => {
+    storybookWebpackConfig!.resolve!.modules!.push(paths.src);
+    storybookWebpackConfig!.resolve!.extensions!.push('.ts', '.tsx');
+    //@ts-ignore
+    storybookWebpackConfig!.module!.rules = storybookWebpackConfig!.module!.rules!.map((rule: RuleSetRule) => {
       if (/svg/.test(rule.test as string)) {
         return { ...rule, exclude: /\.svg$/i };
       }
       return rule;
     });
-    storybookWebpackConfig.module.rules.push({
+    storybookWebpackConfig!.module!.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-    storybookWebpackConfig.plugins.push(new DefinePlugin({
+    storybookWebpackConfig!.plugins!.push(new DefinePlugin({
       __IS_DEV__: JSON.stringify(true),
       __API__: JSON.stringify(''),
     }));
