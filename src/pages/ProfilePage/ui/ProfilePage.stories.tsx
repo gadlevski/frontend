@@ -14,14 +14,14 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const ProfilePageLight: Story = {
-  name: 'ProfilePage (Светлая тема)',
+  name: 'ProfilePage (Light Theme)',
   decorators: [
     themeDecorator(Theme.LIGHT), storeDecorator({}),
   ],
 };
 
 export const ProfilePageDark: Story = {
-  name: 'ProfilePage (Темная тема)',
+  name: 'ProfilePage (Dark Theme)',
   decorators: [
     themeDecorator(Theme.DARK), storeDecorator({}),
   ],

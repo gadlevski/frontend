@@ -13,12 +13,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const NotFoundPageLight: Story = {
-  name: 'NotFoundPage (Светлая тема)',
+  name: 'NotFoundPage (Light Theme)',
   decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const NotFoundPageDark: Story = {
-  name: 'NotFoundPage (Темная тема)',
+  name: 'NotFoundPage (Dark Theme)',
   decorators: [themeDecorator(Theme.DARK)],
 };
 

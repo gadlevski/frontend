@@ -4,13 +4,13 @@ on:
   push:
     branches: [master, fix_ui_test]
   pull_request:
-    branches: [master, fix_ui_test]
+    branches: [master]
 jobs:
   Pipline:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix: 
-        node-version: [ 17.x ]
+        node-version: [ 16.18.1 ]
     steps:
       - uses: actions/checkout@v2
 
