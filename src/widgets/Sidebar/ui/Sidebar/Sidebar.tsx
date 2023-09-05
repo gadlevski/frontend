@@ -25,7 +25,11 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     >
       <div className={cls.items}>
         {SidebarItemsList.map((item) => (
-          <SidebarItem item={item} isCollapsed={isCollapsed} key={item.path} />
+          <SidebarItem
+            item={item}
+            isCollapsed={isCollapsed}
+            key={item.path}
+          />
         ))}
       </div>
       <div className={cls.switchers}>

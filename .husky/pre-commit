@@ -4,6 +4,6 @@
 npm run build:prod
 npm run lint:ts
 npm run lint:scss
-npm run test:unit
-npm run current
-npm run test:ui
+npm run t:unit
+npm run cur
+npm run t:ui

@@ -13,5 +13,7 @@
   "Authorization form": "Форма авторизации",
   "Enter username": "Введите логин",
   "Enter password": "Введите пароль",
-  "Authorization form error": "Вы ввели неверный логин или пароль"
+  "Authorization form error": "Вы ввели неверный логин или пароль",
+  "currency": "Валюта",
+  "сountry": "Страна"
 }

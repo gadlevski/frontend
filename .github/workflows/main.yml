@@ -36,20 +36,20 @@ jobs:
 
       - name: Unit testing with Jest
         if: always()
-        run: npm run test:unit
+        run: npm run t:unit
             
-      - name: Generate current UI test screenshots
-        run: npm run current
+      #- name: Generate current UI test screenshots
+      #  run: npm run cur
 
-      - name: Compare UI test screenshots with reference
-        run: npm run test:ui
+      #- name: Compare UI test screenshots with reference
+      #  run: npm run t:ui
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: test-artifacts
-          path: |
-            report.html
-            report.json
-            __screenshots__/**/*
+      #- name: Upload artifacts
+      #  uses: actions/upload-artifact@v2
+      #  if: always()
+      #  with:
+      #    name: test-artifacts
+      #    path: |
+      #      report.html
+      #      report.json
+      #      __screenshots__/**/*

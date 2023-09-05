@@ -3,6 +3,7 @@
   "Authorization form error": "",
   "Enter password": "",
   "Enter username": "",
+  "currency": "",
   "decrement": "",
   "error": "",
   "generateError": "",
@@ -13,5 +14,6 @@
   "notFound": "",
   "reload": "",
   "toggle": "",
-  "value": ""
+  "value": "",
+  "сountry": ""
 }
