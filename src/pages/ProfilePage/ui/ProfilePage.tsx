@@ -1,12 +1,13 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ProfileCard, fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadonly, profileActions, profileReducer } from 'entities/Profile';
+import { ProfileCard, ValidateProfileError, fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadonly, getProfileValidateErrors, profileActions, profileReducer } from 'entities/Profile';
 import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+import { Text, ThemeText } from 'shared/ui/Text/Text';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -20,6 +21,15 @@ const ProfilePage = () => {
   const error = useSelector(getProfileError);
   const isLoading = useSelector(getProfileIsLoading);
   const readonly = useSelector(getProfileReadonly);
+  const validateErrors = useSelector(getProfileValidateErrors);
+
+  const validateErrorTranslates = {
+    [ValidateProfileError.SERVER_ERROR]: t('server error'),
+    [ValidateProfileError.INCORRECT_COUNTRY]: t('incorrect country'),
+    [ValidateProfileError.NO_DATA]: t('no data'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t('incorrect user data'),
+    [ValidateProfileError.INCORRECT_AGE]: t('incorrect age'),
+  };
 
   const onChangeFirstname = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ first: value || '' }));
@@ -55,7 +65,9 @@ const ProfilePage = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   return (
@@ -63,6 +75,9 @@ const ProfilePage = () => {
       <div>
         {t('title')}
         <ProfilePageHeader />
+        {validateErrors?.length && validateErrors.map(err => (
+          <Text theme={ThemeText.ERROR} text={validateErrorTranslates[err]} key={err} />
+        ))}
         <ProfileCard
           data={formData}
           isLoading={isLoading}

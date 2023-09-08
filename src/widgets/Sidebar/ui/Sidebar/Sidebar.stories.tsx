@@ -14,10 +14,30 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const SidebarLight: Story = {
-  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({})],
+  decorators: [
+    themeDecorator(Theme.LIGHT),
+    storeDecorator({
+      user: {
+        authData: {},
+      },
+    })],
 };
 
 export const SidebarDark: Story = {
-  decorators: [themeDecorator(Theme.DARK), storeDecorator({})],
+  decorators: [
+    themeDecorator(Theme.DARK),
+    storeDecorator({
+      user: {
+        authData: {},
+      },
+    })],
+};
+
+export const SidebarNoAuthLight: Story = {
+  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({ user: {} })],
+};
+
+export const SidebarNoAuthDark: Story = {
+  decorators: [themeDecorator(Theme.DARK), storeDecorator({ user: {} })],
 };
 
