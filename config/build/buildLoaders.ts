@@ -2,7 +2,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 
-export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+  const { isDev } = options;
   const svgLoader = {
     test: /\.svg$/i,
     issuer: /\.[jt]sx?$/,
@@ -47,7 +48,10 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
       options: {
         presets: ['@babel/preset-env'],
         plugins: [
-          ['i18next-extract', { locales: ['ru', 'en'], keyAsDefaultValue: true }],
+          [
+            'i18next-extract', { locales: ['ru', 'en'], keyAsDefaultValue: true },
+            isDev && require.resolve('react-refresh/babel'),
+          ].filter(Boolean),
         ],
       },
     },
