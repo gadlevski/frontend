@@ -5,20 +5,23 @@ import { AppRouter } from './providers/router';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch';
 import { userActions } from 'entities/User/model/slice/userSlice';
 import { useEffect } from 'react';
+import { getUserInited } from 'entities/User';
+import { useSelector } from 'react-redux';
 
 const App = () => {
   const dispatch = useAppDispatch();
+  const inited = useSelector(getUserInited);
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
-  }, [dispatch]);
+  }, [dispatch, inited]);
 
   return (
     <div className={classNames('app', {}, [])}>
       <Navbar />
       <div className="content-page">
         <Sidebar />
-        <AppRouter />
+        {inited && <AppRouter />}
       </div>
     </div>
   );

@@ -40,7 +40,6 @@ const ProfilePage = () => {
   }, [dispatch]);
 
   const onChangeAge = useCallback((value?: string) => {
-    console.log('value', value);
     dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
   }, [dispatch]);
 

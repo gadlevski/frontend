@@ -25,6 +25,13 @@ const config: StorybookConfig = {
       entry: '',
       src: path.resolve(__dirname, '..', '..', 'src'),
     };
+    storybookWebpackConfig.resolve = {
+      ...storybookWebpackConfig.resolve,
+      alias: {
+        ...storybookWebpackConfig!.resolve!.alias,
+        entities: path.resolve(__dirname, '..', '..', 'src', 'entities'),
+      },
+    };
     storybookWebpackConfig!.resolve!.modules!.push(paths.src);
     storybookWebpackConfig!.resolve!.extensions!.push('.ts', '.tsx');
     //@ts-ignore

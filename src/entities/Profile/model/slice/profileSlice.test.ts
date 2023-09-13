@@ -73,7 +73,7 @@ describe('profileSlice', () => {
       updateProfileData.pending,
     )).toEqual({
       isLoading: true,
-      validateErrors: [ValidateProfileError.SERVER_ERROR],
+      validateErrors: undefined,
     });
   });
 
