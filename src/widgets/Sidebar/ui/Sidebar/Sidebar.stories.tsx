@@ -13,7 +13,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const SidebarLight: Story = {
+export const Light: Story = {
   decorators: [
     themeDecorator(Theme.LIGHT),
     storeDecorator({
@@ -23,7 +23,7 @@ export const SidebarLight: Story = {
     })],
 };
 
-export const SidebarDark: Story = {
+export const Dark: Story = {
   decorators: [
     themeDecorator(Theme.DARK),
     storeDecorator({

@@ -32,7 +32,7 @@ export const ProfileCardLight: Story = {
   ],
 };
 
-export const ProfileCardWithError: Story = {
+export const WithError: Story = {
   args: {
     error: 'Некорректные данные',
   },
@@ -41,7 +41,7 @@ export const ProfileCardWithError: Story = {
   ],
 };
 
-export const ProfileCardLoading: Story = {
+export const Loading: Story = {
   args: {
     isLoading: true,
   },

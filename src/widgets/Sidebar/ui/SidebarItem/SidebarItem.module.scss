@@ -1,11 +1,18 @@
 .item {
   margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
+  text-decoration: none;
+  max-height: 24px;
+
+  :hover {
+    color: var(--secondary-color);
+  }
 }
 
 .link {
-  margin-left: 10px;
+  margin-left: 20px;
   opacity: 1;
 }
 

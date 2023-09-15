@@ -12,10 +12,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ThemeSwitcherLight: Story = {
+export const Light: Story = {
   decorators: [themeDecorator(Theme.LIGHT)],
 };
 
-export const ThemeSwitcherDark: Story = {
+export const Dark: Story = {
   decorators: [themeDecorator(Theme.DARK)],
 };

@@ -12,7 +12,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ErrorPageLight: Story = {
+export const Light: Story = {
   args: {
     error: new Error('Sample Error Message'),
     resetErrorBoundary: () => console.log('Reset error boundary'),
@@ -21,7 +21,7 @@ export const ErrorPageLight: Story = {
 };
 
 
-export const ErrorPageDark: Story = {
+export const Dark: Story = {
   args: {
     error: new Error('Sample Error Message'),
     resetErrorBoundary: () => console.log('Reset error boundary'),

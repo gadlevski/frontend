@@ -12,28 +12,28 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const LoginFormLight: Story = {
+export const Light: Story = {
   decorators: [
     themeDecorator(Theme.LIGHT),
     storeDecorator({ loginForm: { username: 'admin', password: '123' } }),
   ],
 };
 
-export const LoginFormDark: Story = {
+export const Dark: Story = {
   decorators: [
     themeDecorator(Theme.DARK),
     storeDecorator({ loginForm: { username: 'admin', password: '123' } }),
   ],
 };
 
-export const LoginFormWithError: Story = {
+export const WithError: Story = {
   decorators: [
     themeDecorator(Theme.LIGHT),
     storeDecorator({ loginForm: { username: 'admin', password: '123', error: 'error' } }),
   ],
 };
 
-export const LoginFormLoading: Story = {
+export const Loading: Story = {
   decorators: [
     themeDecorator(Theme.LIGHT),
     storeDecorator({ loginForm: { isLoading: true } }),

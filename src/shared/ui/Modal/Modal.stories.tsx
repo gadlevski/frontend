@@ -17,7 +17,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ModalLight: Story = {
+export const Light: Story = {
   args: {
     isOpen: true,
     children: 'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem',
@@ -25,7 +25,7 @@ export const ModalLight: Story = {
   decorators: [themeDecorator(Theme.LIGHT)],
 };
 
-export const ModalDark: Story = {
+export const Dark: Story = {
   args: {
     isOpen: true,
     children: 'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ',

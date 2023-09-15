@@ -24,7 +24,7 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": ["warn", {
       "argsIgnorePattern": "^_"
     }],
-    "indent": [2, 2],
+    "indent": [2, 2, { "SwitchCase": 1 }],
     "react/jsx-indent": [2, 2],
     "react/jsx-indent-props": [2, 2],
     "react/button-has-type": [1, {

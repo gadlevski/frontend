@@ -12,7 +12,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const InputLight: Story = {
+export const Light: Story = {
   args: {
     placeholder: 'Label',
     value: 'Some text InputLight',
@@ -20,7 +20,7 @@ export const InputLight: Story = {
   decorators: [themeDecorator(Theme.LIGHT)],
 };
 
-export const InputDark: Story = {
+export const Dark: Story = {
   args: {
     placeholder: 'Label',
     value: 'Some text InputDark',

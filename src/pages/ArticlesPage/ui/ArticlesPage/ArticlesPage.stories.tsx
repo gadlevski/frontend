@@ -1,25 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
-import { <FTName | capitalcase> } from './<FTName | capitalcase>';
+import ArticlesPage from './ArticlesPage';
 
 const meta = {
-  title: 'shared/<FTName | capitalcase>',
-  component: <FTName | capitalcase>,
+  title: 'pages/ArticlesPage',
+  component: ArticlesPage,
 
-} satisfies Meta<typeof <FTName | capitalcase>>;
+} satisfies Meta<typeof ArticlesPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const <FTName | capitalcase>Light: Story = {
+export const Light: Story = {
   args: {
 
   },
   decorators: [themeDecorator(Theme.LIGHT)],
 };
 
-export const <FTName | capitalcase>Dark: Story = {
+export const Dark: Story = {
   args: {
 
   },

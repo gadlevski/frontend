@@ -16,8 +16,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ProfilePageLight: Story = {
-  name: 'ProfilePage (Light Theme)',
+export const Light: Story = {
   decorators: [
     themeDecorator(Theme.LIGHT),
     storeDecorator({
@@ -37,8 +36,7 @@ export const ProfilePageLight: Story = {
   ],
 };
 
-export const ProfilePageDark: Story = {
-  name: 'ProfilePage (Dark Theme)',
+export const Dark: Story = {
   decorators: [
     themeDecorator(Theme.DARK),
     storeDecorator({
