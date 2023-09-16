@@ -10,6 +10,7 @@
   "avatar": "avatar",
   "cancel": "cancel",
   "city": "city",
+  "comments": "",
   "common": {
     "Authorization form error": ""
   },
@@ -30,6 +31,7 @@
   "login": "login",
   "main": "main",
   "name": "name",
+  "no comments": "",
   "no data": "no data",
   "notFound": "notFound",
   "profile": "profile",
