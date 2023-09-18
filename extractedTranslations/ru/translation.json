@@ -1,6 +1,7 @@
 {
   "Authorization form": "Authorization form",
   "Authorization form error": "Authorization form error",
+  "Enter comment": "Enter comment",
   "Enter password": "Enter password",
   "Enter username": "Enter username",
   "about us": "about us",
@@ -35,8 +36,10 @@
   "no data": "no data",
   "notFound": "notFound",
   "profile": "profile",
+  "profile not found": "profile not found",
   "reload": "reload",
   "save": "save",
+  "send": "send",
   "server error": "server error",
   "title": "title",
   "toggle": "toggle",
@@ -44,6 +47,7 @@
   "value": "value",
   "yourLastname": "yourLastname",
   "yourName": "yourName",
+  "Редактировать": "Редактировать",
   "Сгенерировать ошибку": "Сгенерировать ошибку",
   "сountry": "сountry"
 }

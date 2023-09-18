@@ -4,6 +4,14 @@ import { Profile, ValidateProfileError } from '../../types/profile';
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
 import { validateProfileData } from '../validateProfileData/validateProfileData';
 
+/*
+<
+  1 Тип возвращаемого значения асинхронной функции (или action.payload, когда он выполняется успешно)
+  2 Тип передаваемого аргумента в асинхронную функцию
+  3 Тип конфига для thunk
+>
+*/
+
 export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<ValidateProfileError[]>>(
   'profile/updateProfileData',
   async (_, thunkApi) => {
@@ -15,8 +23,9 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
       return rejectWithValue(errors);
     }
 
+    // formData?.id - id профиля
     try {
-      const response = await extra.api.put<Profile>('/profile', formData);
+      const response = await extra.api.put<Profile>(`/profile/${formData?.id}`, formData);
 
       if (!response.data) {
         throw new Error();

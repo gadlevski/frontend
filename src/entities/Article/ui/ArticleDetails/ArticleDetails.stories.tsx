@@ -4,6 +4,7 @@ import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { ArticleDetails } from './ArticleDetails';
 import { storeDecorator } from 'shared/config/storybook/storeDecorator';
 import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
+import articlelogo from 'shared/assets/test/articlelogo.png';
 
 const meta = {
   title: 'entities/ArticleDetails',
@@ -18,7 +19,7 @@ const article: Article = {
   id: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
-  img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  img: articlelogo,
   views: 1022,
   createdAt: '26.02.2022',
   type: [ArticleType.IT],

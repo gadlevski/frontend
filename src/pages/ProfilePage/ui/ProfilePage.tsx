@@ -1,13 +1,15 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { ProfileCard, ValidateProfileError, fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadonly, getProfileValidateErrors, profileActions, profileReducer } from 'entities/Profile';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch';
+import { useInitialEffect } from 'shared/hooks/useInitialEffect/useInitialEffect';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import { Text, ThemeText } from 'shared/ui/Text/Text';
+import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -22,6 +24,7 @@ const ProfilePage = () => {
   const isLoading = useSelector(getProfileIsLoading);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
+  const { id } = useParams<{ id: string; }>();
 
   const validateErrorTranslates = {
     [ValidateProfileError.SERVER_ERROR]: t('server error'),
@@ -63,14 +66,14 @@ const ProfilePage = () => {
     dispatch(profileActions.updateProfile({ country: country }));
   }, [dispatch]);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}>
       <div>
         {t('title')}
         <ProfilePageHeader />

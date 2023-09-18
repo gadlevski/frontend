@@ -13,6 +13,8 @@
   "Authorization form": "Authorization form",
   "Enter username": "Enter your username",
   "Enter password": "Enter the password",
+  "Enter comment": "Enter the comment text",
+  "send": "Send",
   "Authorization form error": "Invalid username or password",
   "currency": "Currency",
   "сountry": "Country"

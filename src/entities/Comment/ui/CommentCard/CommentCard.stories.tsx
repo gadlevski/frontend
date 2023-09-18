@@ -4,7 +4,7 @@ import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import { CommentCard } from './CommentCard';
 
 const meta = {
-  title: 'shared/CommentCard',
+  title: 'entities/CommentCard',
   component: CommentCard,
 
 } satisfies Meta<typeof CommentCard>;
@@ -14,8 +14,8 @@ type Story = StoryObj<typeof meta>;
 
 const comment = {
   id: '1',
-  text: 'text 1111',
-  user: { id: '1', username: 'Admin' },
+  text: 'Привет. Как дела?',
+  user: { id: '1', username: 'Admin', avatar: '/avatar.png' },
 };
 
 export const Light: Story = {
@@ -30,5 +30,13 @@ export const Dark: Story = {
     comment: comment,
   },
   decorators: [themeDecorator(Theme.DARK)],
+};
+
+export const Loading: Story = {
+  args: {
+    comment: comment,
+    isLoading: true,
+  },
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
