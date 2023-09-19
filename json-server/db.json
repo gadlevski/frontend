@@ -19,6 +19,7 @@
       "img": "https://usefulangle.com/img/thumb/javascript.png",
       "views": 1022,
       "createdAt": "26.02.2022",
+      "userId": "1",
       "type": [
         "IT"
       ],
@@ -90,6 +91,7 @@
       "img": "https://usefulangle.com/img/thumb/javascript.png",
       "views": 1022,
       "createdAt": "26.02.2022",
+      "userId": "2",
       "type": [
         "IT"
       ],

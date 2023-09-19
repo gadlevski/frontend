@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import { Article, ArticleBlockType, ArticleType } from 'entities/Article';
 import { storeDecorator } from 'shared/config/storybook/storeDecorator';
 
 const meta = {
@@ -21,6 +21,11 @@ const article: Article = {
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
   createdAt: '26.02.2022',
+  user: {
+    id: '1',
+    username: 'Андрей',
+    avatar: '/avatar.png',
+  },
   type: [ArticleType.IT],
   blocks: [
     {

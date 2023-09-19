@@ -9,6 +9,7 @@
   "article loading error": "article loading error",
   "article not found": "article not found",
   "avatar": "avatar",
+  "back": "back",
   "cancel": "cancel",
   "city": "city",
   "comments": "comments",
@@ -37,6 +38,7 @@
   "notFound": "notFound",
   "profile": "profile",
   "profile not found": "profile not found",
+  "read more": "read more",
   "reload": "reload",
   "save": "save",
   "send": "send",
@@ -47,7 +49,15 @@
   "value": "value",
   "yourLastname": "yourLastname",
   "yourName": "yourName",
+  "Назад к списку": "Назад к списку",
   "Редактировать": "Редактировать",
   "Сгенерировать ошибку": "Сгенерировать ошибку",
+  "Читать далее": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "сountry": "сountry"
 }

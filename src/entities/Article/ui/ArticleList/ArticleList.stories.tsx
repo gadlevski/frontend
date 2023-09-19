@@ -1,11 +1,17 @@
-import { Article, ArticleList, ArticleView } from 'entities/Article';
-import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './ArticlesPage.module.scss';
+import type { Meta, StoryObj } from '@storybook/react';
+import { Theme } from 'app/providers/ThemeProvider';
+import { themeDecorator } from 'shared/config/storybook/themeDecorator';
+import { ArticleList } from './ArticleList';
+import { Article, ArticleView } from '../../model/types/article';
 
-interface ArticlesPageProps {
-  className?: string;
-}
+const meta = {
+  title: 'entities/ArticleList',
+  component: ArticleList,
+
+} satisfies Meta<typeof ArticleList>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 const article =
   {
@@ -85,19 +91,49 @@ const article =
     ],
   } as Article;
 
-const ArticlesPage = (props: ArticlesPageProps) => {
-  const { className } = props;
-
-  return (
-    <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      <ArticleList
-        isLoading
-        view={ArticleView.BIG}
-        // articles={[]}
-        articles={new Array(16).fill(0).map((item, index) => ({ ...article, id: String(index) }))}
-      />
-    </div>
-  );
+export const LoadingBig: Story = {
+  args: {
+    articles: [],
+    isLoading: true,
+    view: ArticleView.BIG,
+  },
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
-export default memo(ArticlesPage);
+export const LoadingSmall: Story = {
+  args: {
+    articles: [],
+    isLoading: true,
+    view: ArticleView.SMALL,
+  },
+  decorators: [themeDecorator(Theme.LIGHT)],
+};
+
+export const ListSmall: Story = {
+  args: {
+    articles: new Array(9)
+      .fill(0)
+      .map((item, index) => ({
+        ...article,
+        id: String(index),
+      })),
+    isLoading: false,
+    view: ArticleView.SMALL,
+  },
+  decorators: [themeDecorator(Theme.LIGHT)],
+};
+
+export const ListBig: Story = {
+  args: {
+    articles: new Array(9)
+      .fill(0)
+      .map((item, index) => ({
+        ...article,
+        id: String(index),
+      })),
+    isLoading: false,
+    view: ArticleView.BIG,
+  },
+  decorators: [themeDecorator(Theme.LIGHT)],
+};
+

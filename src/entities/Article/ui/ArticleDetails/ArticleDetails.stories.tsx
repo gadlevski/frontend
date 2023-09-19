@@ -22,6 +22,11 @@ const article: Article = {
   img: articlelogo,
   views: 1022,
   createdAt: '26.02.2022',
+  user: {
+    id: '1',
+    username: 'Андрей',
+    avatar: '/avatar.png',
+  },
   type: [ArticleType.IT],
   blocks: [
     {
