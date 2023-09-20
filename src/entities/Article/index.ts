@@ -3,3 +3,4 @@ export { ArticleType, ArticleView, Article, ArticleBlockType } from './model/typ
 export { ArtilcleDetailsSchema } from './model/types/artilcleDetailsSchema';
 export { articleDetailsReducer } from './model/slice/artilcleDetailsSlice';
 export { ArticleList } from './ui/ArticleList/ArticleList';
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';

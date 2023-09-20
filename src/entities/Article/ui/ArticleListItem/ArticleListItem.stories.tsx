@@ -5,7 +5,7 @@ import { ArticleListItem } from './ArticleListItem';
 import { Article, ArticleView } from '../../model/types/article';
 
 const meta = {
-  title: 'shared/ArticleListItem',
+  title: 'entities/ArticleListItem',
   component: ArticleListItem,
 
 } satisfies Meta<typeof ArticleListItem>;

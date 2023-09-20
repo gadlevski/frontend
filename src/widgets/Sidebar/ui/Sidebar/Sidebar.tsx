@@ -7,6 +7,9 @@ import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { getSidebarItems } from 'widgets/Sidebar/model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
+import MenuOpen from 'shared/assets/icons/menu-open.svg';
+import MenuClose from 'shared/assets/icons/menu-close.svg';
+import { Icon } from 'shared/ui/Icon/Icon';
 
 interface SidebarProps {
   className?: string;
@@ -52,7 +55,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
         theme={ThemeButton.BACKGROUND_INVERTED}
         size={ButtonSize.L}
       >
-        {isCollapsed ? '>' : '<'}
+        <Icon Svg={isCollapsed ? MenuClose : MenuOpen} />
       </Button>
     </div>
   );
