@@ -4,12 +4,13 @@ import { Comment } from 'entities/Comment';
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
 
+// Создаем адаптер для работы с комментариями. Это помогает автоматизировать многие действия с данными.
 const commentsAdapter = createEntityAdapter<Comment>({
   // comment.id - поле по которому будет идти нормализация
   selectId: (comment) => comment.id,
 });
 
-// селектор для получения комментариев
+// Селектор для получения комментариев по статье из глобального состояния
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
   (state) => state.articleDetailsComments || commentsAdapter.getInitialState());
 

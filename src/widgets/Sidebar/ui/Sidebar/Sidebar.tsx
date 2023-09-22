@@ -32,7 +32,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
   )), [isCollapsed, sidebarItemsList]);
 
   return (
-    <div
+    <menu
       data-testid='sidebar'
       className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [
         className,
@@ -57,6 +57,6 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
       >
         <Icon Svg={isCollapsed ? MenuClose : MenuOpen} />
       </Button>
-    </div>
+    </menu>
   );
 });
