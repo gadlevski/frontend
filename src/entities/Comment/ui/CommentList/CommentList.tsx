@@ -29,9 +29,9 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
   return (
     <div className={classNames(cls.CommentList, {}, [className])}>
       {comments?.length
-        ? comments.map((comment, index) => (
+        ? comments.map((comment) => (
           <CommentCard
-            key={index}
+            key={comment.id}
             isLoading={isLoading}
             className={cls.comment}
             comment={comment}
