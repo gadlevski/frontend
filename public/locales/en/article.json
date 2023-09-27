@@ -1,7 +1,12 @@
 {
   "article not found": "Article Not Found",
+  "articles not found": "Articles Not Found",
   "article loading error": "An error occurred while loading the article",
   "comments": "Comments",
   "read more": "Read more...",
-  "back": "Back to list"
+  "back": "Back to list",
+  "all": "All articles",
+  "it": "IT",
+  "economy": "Economy",
+  "science": "Science"
 }
