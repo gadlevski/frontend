@@ -47,7 +47,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
                 theme={ThemeButton.OUTLINE}
                 onClick={onEdit}
               >
-                {t('Редактировать')}
+                {t('edit')}
               </Button>
             )
             : (

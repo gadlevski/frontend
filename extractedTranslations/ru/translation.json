@@ -20,12 +20,15 @@
   "common": {
     "Authorization form error": "Authorization form error"
   },
+  "create article": "create article",
+  "creating new article": "creating new article",
   "currency": "currency",
   "date": "date",
   "decrement": "decrement",
   "desc": "desc",
   "economy": "economy",
   "edit": "edit",
+  "editing article with id": "editing article with id",
   "error": "error",
   "errorText": "errorText",
   "errorTitle": "errorTitle",
@@ -63,8 +66,10 @@
   "yourLastname": "yourLastname",
   "yourName": "yourName",
   "Назад к списку": "Назад к списку",
+  "Редактирование статьи с ID = ": "Редактирование статьи с ID = ",
   "Редактировать": "Редактировать",
   "Сгенерировать ошибку": "Сгенерировать ошибку",
+  "Создание новой статьи": "Создание новой статьи",
   "Читать далее": {
     "": {
       "": {

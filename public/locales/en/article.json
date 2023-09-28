@@ -9,5 +9,8 @@
   "it": "IT",
   "economy": "Economy",
   "science": "Science",
-  "recommended": "Recommended"
+  "recommended": "Recommended",
+  "edit": "Edit",
+  "editing article with id": "Editing an article with ID =",
+  "creating new article": "Creating a new article"
 }

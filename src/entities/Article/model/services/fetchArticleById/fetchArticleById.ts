@@ -17,7 +17,11 @@ export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig<st
     try {
       // Тип ожидаемого ответа
       // Принимает как аргумент запрашиваемый URL
-      const response = await extra.api.get<Article>(`/articles/${articleId}`);
+      const response = await extra.api.get<Article>(`/articles/${articleId}`, {
+        params: {
+          _expand: 'user',
+        },
+      });
       if (!response.data) {
         throw new Error();
       }
