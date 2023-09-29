@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run build:prod
-npm run lint:ts
-npm run lint:scss
+npm run b:prod
+npm run l:ts
+npm run l:scss
 npm run t:unit
 npm run cur
 npm run t:ui

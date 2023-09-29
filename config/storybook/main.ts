@@ -24,6 +24,8 @@ const config: StorybookConfig = {
       html: '',
       entry: '',
       src: path.resolve(__dirname, '..', '..', 'src'),
+      locales: '',
+      buildLocales: '',
     };
     storybookWebpackConfig.resolve = {
       ...storybookWebpackConfig.resolve,

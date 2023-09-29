@@ -24,15 +24,15 @@ jobs:
 
       - name: Build production project
         if: always()
-        run: npm run build:prod
+        run: npm run b:prod
 
       - name: Linting typescript with Eslint
         if: always()
-        run: npm run lint:ts
+        run: npm run l:ts
         
       - name: Linting scss with Stylelint
         if: always()
-        run: npm run lint:scss
+        run: npm run l:scss
 
       - name: Unit testing with Jest
         if: always()
