@@ -19,7 +19,7 @@ module.exports = {
     sourceType: "module",
     project: "./tsconfig.json"
   },
-  plugins: ["react", "@typescript-eslint", "import", "i18next"],
+  plugins: ["react", "@typescript-eslint", "import", "i18next", "ga-plugin"],
   rules: {
     "@typescript-eslint/no-unused-vars": ["warn", {
       "argsIgnorePattern": "^_"
@@ -35,6 +35,7 @@ module.exports = {
     "i18next/no-literal-string": ["warn", {
       mode: "jsx-text-only"
     }],
+    "ga-plugin/path-checker": "error",
     "no-unused-vars": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/naming-convention": "off",
