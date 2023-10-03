@@ -72,3 +72,21 @@ export const SizeL: Story = {
   },
   decorators: [themeDecorator(Theme.LIGHT)],
 };
+
+export const SizeM: Story = {
+  args: {
+    title: 'Title SizeM',
+    text: 'Text SizeM',
+    size: TextSize.M,
+  },
+  decorators: [themeDecorator(Theme.LIGHT)],
+};
+
+export const SizeS: Story = {
+  args: {
+    title: 'Title SizeS',
+    text: 'Text SizeS',
+    size: TextSize.S,
+  },
+  decorators: [themeDecorator(Theme.LIGHT)],
+};

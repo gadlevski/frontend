@@ -33,13 +33,13 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
   )), [isCollapsed, sidebarItemsList]);
 
   return (
-    <menu
+    <aside
       data-testid='sidebar'
       className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [
         className,
       ])}
     >
-      <VStack gap="16" className={cls.items}>
+      <VStack role="navigation" gap="16" className={cls.items}>
         {itemsList}
       </VStack>
       <div className={cls.switchers}>
@@ -58,6 +58,6 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
       >
         <Icon Svg={isCollapsed ? MenuClose : MenuOpen} />
       </Button>
-    </menu>
+    </aside>
   );
 });
