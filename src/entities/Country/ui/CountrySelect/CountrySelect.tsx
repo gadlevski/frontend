@@ -32,7 +32,7 @@ export const CountrySelect: FC<CountrySelectProps> = memo((props) => {
       label={t('country')}
       items={options}
       readonly={readonly}
-      direction="top"
+      direction="top right"
     />
   );
 });
