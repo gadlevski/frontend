@@ -4,6 +4,7 @@
   "Enter comment": "",
   "Enter password": "",
   "Enter username": "",
+  "country": "",
   "currency": "",
   "decrement": "",
   "error": "",
@@ -17,5 +18,6 @@
   "send": "",
   "toggle": "",
   "value": "",
+  "Укажите страну": "",
   "сountry": ""
 }

@@ -20,6 +20,7 @@
   "common": {
     "Authorization form error": "Authorization form error"
   },
+  "country": "country",
   "create article": "create article",
   "creating new article": "creating new article",
   "currency": "currency",
@@ -70,6 +71,8 @@
   "Редактировать": "Редактировать",
   "Сгенерировать ошибку": "Сгенерировать ошибку",
   "Создание новой статьи": "Создание новой статьи",
+  "Укажите валюту": "Укажите валюту",
+  "Укажите страну": "Укажите страну",
   "Читать далее": {
     "": {
       "": {
