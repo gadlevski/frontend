@@ -506,14 +506,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "/avatar.png"
     },
     {
       "id": "2",
-      "username": "Manager",
+      "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
+      "avatar": "/avatar2.png"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "/avatar2.png"
     }
   ],
