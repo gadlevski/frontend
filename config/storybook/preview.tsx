@@ -1,9 +1,9 @@
 import type { Preview } from '@storybook/react';
+import { Suspense } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
-import '../../src/app/styles/index.scss';
-import { Suspense } from 'react';
 import i18n from 'shared/config/i18n/i18n';
+import '../../src/app/styles/index.scss';
 
 const preview: Preview = {
   parameters: {
@@ -26,7 +26,7 @@ const preview: Preview = {
     (Story) => {
       return (
         <BrowserRouter>
-          <Suspense fallback={<div>loading translations...</div>}>
+          <Suspense>
             <I18nextProvider i18n={i18n}>
               <Story />
             </I18nextProvider>

@@ -17,6 +17,7 @@ const config: StorybookConfig = {
         },
       },
     },
+    'storybook-addon-mock',
   ],
   webpackFinal: async (storybookWebpackConfig) => {
     const paths: BuildPaths = {
@@ -49,7 +50,7 @@ const config: StorybookConfig = {
     });
     storybookWebpackConfig!.plugins!.push(new DefinePlugin({
       __IS_DEV__: JSON.stringify(true),
-      __API__: JSON.stringify(''),
+      __API__: JSON.stringify('http://testapi.ru'),
       __PROJECT__: JSON.stringify('storybook'),
     }));
     return storybookWebpackConfig;
