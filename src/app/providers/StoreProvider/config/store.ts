@@ -39,5 +39,3 @@ export function createReduxStore(
 
   return store;
 }
-
-export type AppDispatchType = ReturnType<typeof createReduxStore>['dispatch'];

@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-import { themeDecorator } from 'shared/config/storybook/themeDecorator';
-import { ArticleDetails } from './ArticleDetails';
-import { storeDecorator } from 'shared/config/storybook/storeDecorator';
-import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
+import { ArticleBlockType, ArticleEnum } from 'entities/Article/model/consts/consts';
 import articlelogo from 'shared/assets/test/articlelogo.png';
+import { storeDecorator } from 'shared/config/storybook/storeDecorator';
+import { themeDecorator } from 'shared/config/storybook/themeDecorator';
+import { Article } from '../../model/types/article';
+import { ArticleDetails } from './ArticleDetails';
 
 const meta = {
   title: 'entities/ArticleDetails',
@@ -27,7 +28,7 @@ const article: Article = {
     username: 'Андрей',
     avatar: '/avatar.png',
   },
-  type: [ArticleType.IT],
+  type: [ArticleEnum.IT],
   blocks: [
     {
       id: '1',

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
+import { Article, ArticleBlockType, ArticleEnum } from 'entities/Article';
+import { storeDecorator } from 'shared/config/storybook/storeDecorator';
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article';
-import { storeDecorator } from 'shared/config/storybook/storeDecorator';
 
 const meta = {
   title: 'pages/ArticleDetailsPage',
@@ -26,7 +26,7 @@ const article: Article = {
     username: 'Андрей',
     avatar: '/avatar.png',
   },
-  type: [ArticleType.IT],
+  type: [ArticleEnum.IT],
   blocks: [
     {
       id: '1',

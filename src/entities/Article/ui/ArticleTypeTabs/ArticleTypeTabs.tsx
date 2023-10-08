@@ -1,13 +1,13 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
+import { ArticleEnum } from 'entities/Article/model/consts/consts';
 import { memo, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
-import { ArticleType } from '../../model/types/article';
 
 interface ArticleTypeTabsProps {
   className?: string;
-  value: ArticleType;
-  onChangeType: (type: ArticleType) => void;
+  value: ArticleEnum;
+  onChangeType: (type: ArticleEnum) => void;
 }
 
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
@@ -16,25 +16,25 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
 
   const typeTabs = useMemo<TabItem[]>(() => [
     {
-      value: ArticleType.ALL,
+      value: ArticleEnum.ALL,
       content: t('all'),
     },
     {
-      value: ArticleType.IT,
+      value: ArticleEnum.IT,
       content: t('it'),
     },
     {
-      value: ArticleType.ECONOMICS,
+      value: ArticleEnum.ECONOMICS,
       content: t('economy'),
     },
     {
-      value: ArticleType.SCIENCE,
+      value: ArticleEnum.SCIENCE,
       content: t('science'),
     },
   ], [t]);
 
   const onTabClick = useCallback((tab: TabItem) => {
-    onChangeType(tab.value as ArticleType);
+    onChangeType(tab.value as ArticleEnum);
   }, [onChangeType]);
 
   return (

@@ -1,6 +1,5 @@
-import { ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector } from 'entities/Article';
-import { ArticleType } from 'entities/Article/model/types/article';
-import { ArticleTypeTabs } from 'entities/Article';
+import { ArticleSortField, ArticleSortSelector, ArticleTypeTabs, ArticleView, ArticleViewSelector } from 'entities/Article';
+import { ArticleEnum } from 'entities/Article/model/consts/consts';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -59,7 +58,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     debouncedFetchData();
   }, [debouncedFetchData, dispatch]);
 
-  const onChangeType = useCallback((value: ArticleType) => {
+  const onChangeType = useCallback((value: ArticleEnum) => {
     dispatch(articlesPageActions.setType(value));
     dispatch(articlesPageActions.setPage(1));
     fetchData();
