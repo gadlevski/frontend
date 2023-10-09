@@ -1,4 +1,20 @@
 {
+  "Authorization form": "Authorization form",
+  "Authorization form error": "Authorization form error",
+  "Enter comment": "Enter comment",
+  "Enter password": "Enter password",
+  "Enter username": "Enter username",
+  "country": "country",
+  "currency": "currency",
+  "decrement": "decrement",
+  "error": "error",
+  "forbidden": "forbidden",
+  "increment": "increment",
   "language": "Русский",
-  "language_shot": "Ру"
+  "language_shot": "Ру",
+  "login": "login",
+  "notFound": "notFound",
+  "reload": "reload",
+  "send": "send",
+  "value": "value"
 }
