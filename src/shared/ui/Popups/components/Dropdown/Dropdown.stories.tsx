@@ -3,8 +3,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { themeDecorator } from 'shared/config/storybook/themeDecorator';
+import { Button } from '../../../Button/Button';
 import { Dropdown } from './Dropdown';
-import { Button } from '../Button/Button';
 
 const meta = {
   title: 'shared/Dropdown',
