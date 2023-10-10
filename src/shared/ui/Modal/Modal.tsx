@@ -1,61 +1,33 @@
-import { FC, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import { ReactNode } from 'react';
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
+import { useModal } from 'shared/lib/hooks/useModal';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
   className?: string;
+  children?: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
   lazy?: boolean;
-  children?: ReactNode;
 }
 
 const ANIMATION_DELAY = 300;
 
-export const Modal: FC<ModalProps> = (props) => {
+export const Modal = (props: ModalProps) => {
   const { className, children, isOpen, onClose, lazy } = props;
-  const [isClosing, setIsClosing] = useState<boolean>(false);
-  const [isMounted, setIsMounted] = useState<boolean>(false);
-  const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+
+  const { close, isClosing, isMounted } = useModal({
+    animationDelay: ANIMATION_DELAY,
+    onClose,
+    isOpen,
+  });
 
   const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };
-
-  const closeHandler = useCallback(() => {
-    if (onClose) {
-      setIsClosing(true);
-      timeRef.current = setTimeout(() => {
-        onClose();
-        setIsClosing(false);
-      }, ANIMATION_DELAY);
-    }
-  }, [onClose]);
-
-  const onKeyDownHandler = useCallback((event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      closeHandler();
-    }
-  }, [closeHandler]);
-
-  useEffect(() => {
-    if (isOpen) {
-      window.addEventListener('keydown', onKeyDownHandler);
-    }
-    return () => {
-      clearTimeout(timeRef.current);
-      window.removeEventListener('keydown', onKeyDownHandler);
-    };
-  }, [isOpen, onKeyDownHandler]);
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    }
-  }, [isOpen]);
 
   if (lazy && !isMounted) {
     return null;
@@ -64,10 +36,8 @@ export const Modal: FC<ModalProps> = (props) => {
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [className])}>
-        <Overlay onClick={closeHandler} />
-        <div
-          className={cls.content}
-        >
+        <Overlay onClick={close} />
+        <div className={cls.content} >
           {children}
         </div>
       </div>
