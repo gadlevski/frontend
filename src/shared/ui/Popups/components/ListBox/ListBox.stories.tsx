@@ -1,9 +1,9 @@
 /* eslint-disable i18next/no-literal-string */
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
-import { spacingDecorator } from 'shared/config/storybook/spacingDecorator';
-import { themeDecorator } from 'shared/config/storybook/themeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { spacingDecorator } from '@/shared/config/storybook/spacingDecorator';
+import { themeDecorator } from '@/shared/config/storybook/themeDecorator';
 import { ListBox } from './ListBox';
 
 const meta = {

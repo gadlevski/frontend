@@ -1,8 +1,8 @@
-import { StateSchema } from 'app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { getProfileForm } from './getProfileForm';
-import avatar from 'shared/assets/test/avatar.png';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import avatar from '@/shared/assets/test/avatar.png';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
 describe('getProfileForm', () => {
   test('Должен вернуть data', () => {

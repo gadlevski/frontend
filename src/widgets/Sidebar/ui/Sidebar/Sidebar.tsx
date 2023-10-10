@@ -1,16 +1,16 @@
 import { FC, Suspense, memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
-import MenuClose from 'shared/assets/icons/menu-close.svg';
-import MenuOpen from 'shared/assets/icons/menu-open.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { LangSwitcher } from 'shared/ui/LangSwitcher';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import MenuClose from '@/shared/assets/icons/menu-close.svg';
+import MenuOpen from '@/shared/assets/icons/menu-open.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button/Button';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { LangSwitcher } from '@/shared/ui/LangSwitcher';
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
-import { VStack } from 'shared/ui/Stack';
+import { VStack } from '@/shared/ui/Stack';
 
 interface SidebarProps {
   className?: string;

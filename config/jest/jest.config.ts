@@ -1,8 +1,3 @@
-/*
- * Подробное объяснение каждого параметра и типа настройки можно найти по адресу:
- * https://jestjs.io/docs/configuration
- */
-
 import path from 'path';
 
 export default {
@@ -51,9 +46,9 @@ export default {
   ],
 
   moduleNameMapper: {
-    'entities/(.*)$': '<rootDir>/src/entities/$1',
     '\\.s?css$': 'identity-obj-proxy',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   reporters: [
     'default',

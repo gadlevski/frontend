@@ -12,7 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "*": [
+      "@/*": [
         "./src/*"
       ]
     },
@@ -29,6 +29,7 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "webpack.config.ts",
-    "json-server/index.js"
+    "json-server/index.js",
+    "scripts/updateImports.ts"
   ],
 }

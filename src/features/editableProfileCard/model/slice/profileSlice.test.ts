@@ -1,6 +1,6 @@
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import avatar from 'shared/assets/test/avatar.png';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import avatar from '@/shared/assets/test/avatar.png';
 import { ValidateProfileError } from '../consts/consts';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { ProfileSchema } from '../types/editableProfileCardSchema';

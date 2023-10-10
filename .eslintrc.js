@@ -42,12 +42,28 @@ module.exports = {
     "import/no-extraneous-dependencies": "off",
     "react/display-name": "off",
     "react/prop-types": "off",
-    "@typescript-eslint/lines-between-class-members": "off"
+    "@typescript-eslint/lines-between-class-members": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "": "never",
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+      },
+    ],
   },
   settings: {
     "react": {
       "version": "detect"
-    }
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+      },
+    },
   },
   globals: {
     __IS_DEV__: true,
