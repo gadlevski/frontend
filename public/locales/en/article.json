@@ -12,5 +12,7 @@
   "recommended": "Recommended",
   "edit": "Edit",
   "editing article with id": "Editing an article with ID =",
-  "creating new article": "Creating a new article"
+  "creating new article": "Creating a new article",
+  "rate article": "Rate the article",
+  "feedback article": "Leave your feedback about the article, it will help improve the quality"
 }
