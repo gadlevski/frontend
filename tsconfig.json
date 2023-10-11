@@ -30,6 +30,7 @@
     "src/**/*.tsx",
     "webpack.config.ts",
     "json-server/index.js",
-    "scripts/updateImports.ts"
+    "scripts/updateImports.ts",
+    "vite.config.ts"
   ],
 }

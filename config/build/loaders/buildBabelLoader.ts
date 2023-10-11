@@ -14,7 +14,7 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
       options: {
         presets: ['@babel/preset-env'],
         plugins: [
-          ['i18next-extract', { locales: ['ru', 'en'], keyAsDefaultValue: true }],
+          // ['i18next-extract', { locales: ['ru', 'en'], keyAsDefaultValue: true }],
           ['@babel/plugin-transform-typescript', { isTsx }],
           '@babel/plugin-transform-runtime',
           isTsx && [babelRemovePropsPlugin, { props: ['data-testid'] }],
