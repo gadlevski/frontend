@@ -31,6 +31,7 @@
     "webpack.config.ts",
     "json-server/index.js",
     "scripts/updateImports.ts",
-    "vite.config.ts"
+    "vite.config.ts",
+    ".eslintrc.js"
   ],
 }

@@ -1,74 +1,75 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
   extends: [
-    "plugin:react/recommended",
-    "airbnb-typescript",
-    "plugin:i18next/recommended",
-    "plugin:storybook/recommended",
-    "plugin:react-hooks/recommended"
+    'plugin:react/recommended',
+    'airbnb-typescript',
+    'plugin:i18next/recommended',
+    'plugin:storybook/recommended',
+    'plugin:react-hooks/recommended',
   ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: "./tsconfig.json"
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: './tsconfig.json',
   },
-  plugins: ["react", "@typescript-eslint", "import", "i18next", "ga-plugin"],
+  plugins: ['react', '@typescript-eslint', 'import', 'i18next', 'ga-plugin'],
   rules: {
-    "@typescript-eslint/no-unused-vars": ["warn", {
-      "argsIgnorePattern": "^_"
+    '@typescript-eslint/no-unused-vars': ['warn', {
+      'argsIgnorePattern': '^_',
     }],
-    "indent": [2, 2, { "SwitchCase": 1 }],
-    "react/jsx-indent": [2, 2],
-    "react/jsx-indent-props": [2, 2],
-    "react/button-has-type": [1, {
-      "button": true,
-      "submit": true,
-      "reset": true
+    'indent': [2, 2, { 'SwitchCase': 1 }],
+    'react/jsx-indent': [2, 2],
+    'react/jsx-indent-props': [2, 2],
+    'react/button-has-type': [1, {
+      'button': true,
+      'submit': true,
+      'reset': true,
     }],
-    "i18next/no-literal-string": ["warn", {
-      mode: "jsx-text-only"
+    'i18next/no-literal-string': ['warn', {
+      mode: 'jsx-text-only',
     }],
-    "ga-plugin/path-checker": ["error", { alias: '@' }],
-    "no-unused-vars": "off",
-    "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/naming-convention": "off",
-    "import/no-extraneous-dependencies": "off",
-    "react/display-name": "off",
-    "react/prop-types": "off",
-    "@typescript-eslint/lines-between-class-members": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
+    'ga-plugin/path-checker': ['error', { alias: '@' }],
+    'ga-plugin/public-api-imports': ['error', { alias: '@' }],
+    'no-unused-vars': 'off',
+    'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/naming-convention': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'react/display-name': 'off',
+    'react/prop-types': 'off',
+    '@typescript-eslint/lines-between-class-members': 'off',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
       {
-        "": "never",
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never",
+        '': 'never',
+        'js': 'never',
+        'jsx': 'never',
+        'ts': 'never',
+        'tsx': 'never',
       },
     ],
   },
   settings: {
-    "react": {
-      "version": "detect"
+    'react': {
+      'version': 'detect',
     },
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+    'import/resolver': {
+      'node': {
+        'extensions': ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },
   globals: {
     __IS_DEV__: true,
     __API__: true,
-    __PROJECT__: true
+    __PROJECT__: true,
   },
   overrides: [
     {
