@@ -1,4 +1,5 @@
-import { AppRoutesProps, routeConfig } from '@/shared/config/routeConfig/routeConfig';
+import { routeConfig } from '@/app/config/routeConfig';
+import { AppRoutesProps } from '@/shared/types/router';
 import { PageLoader } from '@/widgets/PageLoader';
 import { Suspense, memo } from 'react';
 import { Route, Routes } from 'react-router-dom';
