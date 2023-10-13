@@ -35,7 +35,7 @@ module.exports = {
     "i18next/no-literal-string": ["warn", {
       mode: "jsx-text-only"
     }],
-    "ga-plugin/path-checker": "error",
+    "ga-plugin/path-checker": ["error", { alias: '@' }],
     "no-unused-vars": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/naming-convention": "off",
