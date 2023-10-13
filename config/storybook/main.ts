@@ -33,6 +33,7 @@ const config: StorybookConfig = {
       alias: {
         ...storybookWebpackConfig!.resolve!.alias,
         entities: path.resolve(__dirname, '..', '..', 'src', 'entities'),
+        '@': paths.src,
       },
     };
     storybookWebpackConfig!.resolve!.modules!.push(paths.src);
