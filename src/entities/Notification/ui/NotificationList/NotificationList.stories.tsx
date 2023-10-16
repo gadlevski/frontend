@@ -1,6 +1,6 @@
-import { Theme } from '@/app/providers/ThemeProvider';
 import { storeDecorator } from '@/shared/config/storybook/storeDecorator';
 import { themeDecorator } from '@/shared/config/storybook/themeDecorator';
+import { Theme } from '@/shared/const/theme';
 import type { Meta, StoryObj } from '@storybook/react';
 import { NotificationList } from './NotificationList';
 

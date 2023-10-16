@@ -1,3 +1,4 @@
+/* eslint-disable ga-plugin/layer-imports */
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '@/entities/Article';
 import { loginReducer } from '@/features/AuthByUsername';

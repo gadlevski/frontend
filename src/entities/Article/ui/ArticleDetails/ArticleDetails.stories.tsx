@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
 import articlelogo from '@/shared/assets/test/articlelogo.png';
 import { storeDecorator } from '@/shared/config/storybook/storeDecorator';
 import { themeDecorator } from '@/shared/config/storybook/themeDecorator';
+import { Theme } from '@/shared/const/theme';
+import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleBlockType, ArticleEnum } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';

@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
-import type { Meta, StoryObj } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { themeDecorator } from '@/shared/config/storybook/themeDecorator';
+import { Theme } from '@/shared/const/theme';
+import type { Meta, StoryObj } from '@storybook/react';
 import { Flex } from './Flex';
 
 const meta = {

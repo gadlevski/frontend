@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { themeDecorator } from '@/shared/config/storybook/themeDecorator';
-import ArticleEditPage from './ArticleEditPage';
 import { storeDecorator } from '@/shared/config/storybook/storeDecorator';
+import { themeDecorator } from '@/shared/config/storybook/themeDecorator';
+import { Theme } from '@/shared/const/theme';
+import type { Meta, StoryObj } from '@storybook/react';
+import ArticleEditPage from './ArticleEditPage';
 
 const meta = {
   title: 'pages/ArticleEditPage',

@@ -36,7 +36,20 @@ module.exports = {
       mode: 'jsx-text-only',
     }],
     'ga-plugin/path-checker': ['error', { alias: '@' }],
-    'ga-plugin/public-api-imports': ['error', { alias: '@' }],
+    'ga-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
+    'ga-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: ['**/*.test.*', '**/*.story.*'],
+      },
+    ],
     'no-unused-vars': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/naming-convention': 'off',
