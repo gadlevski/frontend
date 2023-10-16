@@ -19,7 +19,7 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['react', '@typescript-eslint', 'import', 'i18next', 'ga-plugin'],
+  plugins: ['react', '@typescript-eslint', 'import', 'i18next', 'ga-plugin', 'unused-imports'],
   rules: {
     '@typescript-eslint/no-unused-vars': ['warn', {
       'argsIgnorePattern': '^_',
@@ -50,6 +50,7 @@ module.exports = {
         testFilesPatterns: ['**/*.test.*', '**/*.story.*'],
       },
     ],
+    'unused-imports/no-unused-imports': 'error',
     'no-unused-vars': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/naming-convention': 'off',
