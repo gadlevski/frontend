@@ -1,8 +1,8 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { Button, ThemeButton } from '@/shared/ui/Button/Button';
-import { Input } from '@/shared/ui/Input/Input';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
 import { HStack } from '@/shared/ui/Stack';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
