@@ -17,5 +17,7 @@
   "no data": "Данные не указаны",
   "incorrect user data": "Имя и фамилия обязательны",
   "incorrect age": "Некорректный возраст",
-  "profile not found": "Профиль не найден"
+  "profile not found": "Профиль не найден",
+  "rate author": "Оцените автора",
+  "feedback author": "Пожалуйста, оставьте свой отзыв об авторе"
 }

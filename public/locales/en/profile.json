@@ -17,5 +17,7 @@
   "no data": "No Data",
   "incorrect user data": "Incorrect User Data",
   "incorrect age": "Incorrect Age",
-  "profile not found": "Profile Not Found"
+  "profile not found": "Profile Not Found",
+  "rate author": "Rate the author",
+  "feedback author": "Please leave your feedback about the author"
 }

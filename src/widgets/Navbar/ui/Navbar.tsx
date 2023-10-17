@@ -1,10 +1,8 @@
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
-import { AvatarDropdown } from '@/features/avatarDropdown';
-import { NotificationButton } from '@/features/notificationButton';
-import { RoutePath } from '@/shared/const/router';
+import { AvatarDropdown } from '@/features/AvatarDropdown';
+import { NotificationButton } from '@/features/NotificationButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { memo, useCallback, useState } from 'react';
@@ -33,13 +31,13 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
-        <AppLink
+        {/* <AppLink
           to={RoutePath.article_create}
           theme={AppLinkTheme.SECONDARY}
           className={cls.createBtn}
         >
           {t('create article')}
-        </AppLink>
+        </AppLink> */}
         <HStack gap="16" className={cls.actions}>
           <NotificationButton />
           <AvatarDropdown />

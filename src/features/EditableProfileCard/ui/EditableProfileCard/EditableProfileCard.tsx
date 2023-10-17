@@ -1,15 +1,15 @@
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ProfileCard } from '@/entities/Profile';
-import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
 import { VStack } from '@/shared/ui/Stack';
 import { Text, ThemeText } from '@/shared/ui/Text';
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { ValidateProfileError } from '../../model/consts/consts';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
@@ -22,7 +22,7 @@ import { EditableProfileCardHeader } from '../EditableProfileCardHeader/Editable
 
 interface EditableProfileCardProps {
   className?: string;
-  id?: string;
+  profileId?: string;
 }
 
 const reducers: ReducersList = {
@@ -30,7 +30,7 @@ const reducers: ReducersList = {
 };
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
-  const { className, id } = props;
+  const { className, profileId } = props;
   const { t } = useTranslation('profile');
 
   const dispatch = useAppDispatch();
@@ -49,8 +49,8 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   };
 
   useInitialEffect(() => {
-    if (id) {
-      dispatch(fetchProfileData(id));
+    if (profileId) {
+      dispatch(fetchProfileData(profileId));
     }
   });
 

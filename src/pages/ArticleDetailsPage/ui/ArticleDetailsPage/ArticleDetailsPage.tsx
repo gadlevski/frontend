@@ -1,6 +1,6 @@
 import { ArticleDetails } from '@/entities/Article';
-import { ArticleRating } from '@/features/articleRating';
-import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
+import { ArticleRating } from '@/features/ArticleRating';
+import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from '@/shared/ui/Stack';

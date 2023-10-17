@@ -656,17 +656,24 @@
   "profile-ratings": [
     {
       "id": "1",
-      "rate": 4,
-      "feedback": "Хорошая статья",
-      "userId": "1",
-      "profileId": "1"
+      "profileId": "2",
+      "rate": "4",
+      "feedback": "Good author!",
+      "userId": "1"
     },
     {
       "id": "2",
-      "rate": 4,
-      "feedback": "Хорошая статья",
+      "profileId": "3",
+      "rate": "4",
+      "feedback": "Good author!",
+      "userId": "1"
+    },
+    {
       "userId": "1",
-      "profileId": "2"
+      "profileId": "1",
+      "feedback": "cool author",
+      "rate": 3,
+      "id": "8W4Nxv0"
     }
   ]
 }

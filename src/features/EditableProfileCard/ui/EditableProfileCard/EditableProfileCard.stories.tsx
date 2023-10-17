@@ -15,7 +15,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
   args: {
-    id: '1',
+    profileId: '1',
   },
   decorators: [
     themeDecorator(Theme.LIGHT),

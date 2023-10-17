@@ -1,9 +1,9 @@
 /* eslint-disable ga-plugin/layer-imports */
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '@/entities/Article';
+import { addCommentFormReducer } from '@/features/AddCommentForm';
 import { loginReducer } from '@/features/AuthByUsername';
-import { addCommentFormReducer } from '@/features/addCommentForm';
-import { profileReducer } from '@/features/editableProfileCard';
+import { profileReducer } from '@/features/EditableProfileCard';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { StoryFn } from '@storybook/react';
