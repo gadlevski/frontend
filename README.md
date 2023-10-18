@@ -76,7 +76,7 @@ npm run dev:vite
 
 ## Оптимизация производительности
 
-- `useCallback` предотвращает создание новой функции при каждом рендере [Пример](/src/entities/Article/ui/ArticleSortSelector/ArticleSortSelector.tsx)
+- `useCallback` предотвращает создание новой функции при каждом рендере [Пример](/src/entities/Article/ui/ArticleDetails/ArticleDetails.tsx)
 - `useMemo` предотвращает создание нового массива при каждом рендере [Пример](/src/entities/Article/ui/ArticleSortSelector/ArticleSortSelector.tsx)
 - `memo` компонент будет перерендериваться только если его пропсы изменились [Пример](/src/entities/Article/ui/ArticleSortSelector/ArticleSortSelector.tsx)
 - `createSelector` для мемоизации селекторов [Пример](/src/pages/ArticleDetailsPage/model/selectors/article.ts)
@@ -134,6 +134,7 @@ npm run l:ts:fix
 - `storybook/addon-essentials` для документирования компонентов
 - `storybook/addon-interactions` позволяет создавать и тестировать интерактивные компоненты
 - `storybook/addon-styling` предназначен для работы со стилями
+- `storybook-addon-themes` позволяет добавить класс (изменение темы из панели) 
 
 <br>
 
