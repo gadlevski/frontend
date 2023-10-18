@@ -2,6 +2,8 @@
 
 Проект представляет собой блог о программировании.
 
+<br>
+
 ## Стек технологий
 
 Фронтенд написан на `React 18`, `TypeScript`. Бекенд на `json-server`.
@@ -12,6 +14,8 @@
 - `i18next` для мультиязычности (русский и английский языки)
 - Сайт имеет цветовые схемы (светлая и темная) через хук [useTheme](/src/shared/lib/hooks/useTheme.ts)
 
+<br>
+
 ### Работа с данными
 
 - `reduxjs/toolkit` Взаимодействие с данными
@@ -20,7 +24,9 @@
 
 - `RTK query` для запросов на сервер 
 
-- [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader.tsx) для асинхронного подключения редюсеров 
+- [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx) для асинхронного подключения редюсеров 
+
+<br>
 
 ## Запуск проекта
 
@@ -31,46 +37,64 @@ npm run dev
 npm run dev:vite 
 ```
 
+<br>
+
 ## Архитектура проекта
 
 Проект написан в соответствии с методологией [Feature sliced design](https://feature-sliced.design/docs/get-started/tutorial)
+
+<br>
 
 ### Пример использования FSD в проекте
 
 - [ArticleDetailsPage](/src/pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.tsx) и [ProfilePage](/src/pages/ProfilePage/ui/ProfilePage.tsx) - это слой `pages`.
   Страницы для отображения статьи и профиля пользователя
 - [ArticleRating](/src/features/articleRating/ui/ArticleRating/ArticleRating.tsx) и [ProfileRating](/src/features/ProfileRating/ui/ProfileRating/ProfileRating.tsx) - это слой `features`.
-  Фичи, внутри которых есть бизнес логика, работа с бекендом.
-  Оперируют сущностями, например определяют какой текст будет внутри сущности карточки с рейтингом. Фичи предназначены для решения конкретных задач, он менее переиспользуемые.
+  Фичи, внутри которых есть бизнес логика, запросы на бекенд.
+  Оперируют сущностями, например, определяют какой текст будет внутри сущности карточки с рейтингом. Фичи предназначены для решения конкретных задач, он менее переиспользуемые.
 - [RatingCard](/src/entities/Rating/ui/RatingCard/RatingCard.tsx) - это слой `entitity`.
   Cкелет карточки с рейтингом. Сущность, которая не привязана к бизнес логике.
 - [StarRating](/src/shared/ui/StarRating/StarRating.tsx) - это переиспользуемый `shared` компонент.
   Интерактивный элемент звездочек, который можно использовать где угодно.
 
+<br>
 
+[ArticleDetailsPage](/src/pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.tsx) (`pages`)<br>
+|<br>
+|---- [ArticleRating](/src/features/articleRating/ui/ArticleRating/ArticleRating.tsx) (`features`)<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---- [RatingCard](/src/entities/Rating/ui/RatingCard/RatingCard.tsx) (`entities`)<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---- [StarRating](/src/shared/ui/StarRating/StarRating.tsx) (`shared`)<br>
+|<br>
+|<br>
+[ProfilePage](/src/pages/ProfilePage/ui/ProfilePage/ProfilePage.tsx) (`pages`)<br>
+|<br>
+|---- [ProfileRating](/src/features/ProfileRating/ui/ProfileRating/ProfileRating.tsx) (`features`)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---- [RatingCard](/src/entities/Rating/ui/RatingCard/RatingCard.tsx) (`entities`)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---- [StarRating](/src/shared/ui/StarRating/StarRating.tsx) (`shared`)<br>
 
-[ArticleDetailsPage](/src/pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.tsx) (`pages`)
-|
-|---- [ArticleRating](/src/features/articleRating/ui/ArticleRating/ArticleRating.tsx) (`features`)
-|     |
-|     |---- [RatingCard](/src/entities/Rating/ui/RatingCard/RatingCard.tsx) (`entities`)
-|           |
-|           |---- [StarRating](/src/shared/ui/StarRating/StarRating.tsx) (`shared`)
-|
-|
-[ProfilePage](/src/pages/ProfilePage/ui/ProfilePage.tsx) (`pages`)
-|
-|---- [ProfileRating](/src/features/ProfileRating/ui/ProfileRating/ProfileRating.tsx) (`features`)
-      |
-      |---- [RatingCard](/src/entities/Rating/ui/RatingCard/RatingCard.tsx) (`entities`)
-            |
-            |-- [StarRating](/src/shared/ui/StarRating/StarRating.tsx) (`shared`)
+<br>
 
+## Оптимизация производительности
 
+- `useCallback` предотвращает создание новой функции при каждом рендере [Пример](/src/entities/Article/ui/ArticleSortSelector/ArticleSortSelector.tsx)
+- `useMemo` предотвращает создание нового массива при каждом рендере [Пример](/src/entities/Article/ui/ArticleSortSelector/ArticleSortSelector.tsx)
+- `memo` компонент будет перерендериваться только если его пропсы изменились [Пример](/src/entities/Article/ui/ArticleSortSelector/ArticleSortSelector.tsx)
+- `createSelector` для мемоизации селекторов [Пример](/src/pages/ArticleDetailsPage/model/selectors/article.ts)
+- `lazy` для динамической загрузки компонента [Пример](/src/features/ArticleRating/ui/ArticleRating/ArticleRating.async.tsx)
+- `Suspense` для отображения Skeleton, пока идет загрузка основного компонента [Пример](/src/features/ArticleRating/ui/ArticleRating/ArticleRating.async.tsx)
+- `IntersectionObserver` для бесконечного скролла в хуке [useInfiniteScroll](/src/shared/lib/hooks/useInfiniteScroll.ts)
+- [useThrottle](/src/shared/lib/hooks/useThrottle.ts) позволяет вызвать переданный callback не чаще, чем один раз в заданный промежуток времени. Используется в при скролле в [Page](/src/widgets/Page/ui/Page/Page.tsx)
+- [useDebounce](/src/shared/lib/hooks/useDebounce.ts) позволяет отложить выполнение переданного callback на заданный промежуток времени. Используется для оптимизации поискового запроса в [ArticlesPageFilters](/src/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters.tsx)
+
+<br>
 
 ## Линтинг
 
-`Stylelint` для проверки файлов со стилями
+`Stylelint` для проверки css и scss файлов
 
 Команды для запуска
 
@@ -81,7 +105,7 @@ npm run l:scss
 npm run l:scss:fix
 ```
 
-
+<br>
 
 `Eslint` для проверки ts и tsx файлов
 
@@ -94,7 +118,7 @@ npm run l:ts
 npm run l:ts:fix
 ```
 
-
+<br>
 
 Для контроля архитектурных принципов, используется собственный [eslint-plugin-ga-plugin](https://www.npmjs.com/package/eslint-plugin-ga-plugin), который содержит 3 правила
 
@@ -103,6 +127,8 @@ npm run l:ts:fix
   (например widgets нельзя использовать в features и entitites)
 - `public-api-imports` - разрешает импорт из других модулей только из public api. Имеет auto fix
 
+<br>
+
 ## Storybook
 
 Дополнительные плангины
@@ -110,9 +136,9 @@ npm run l:ts:fix
 - `storybook-addon-mock` позволяет имитировать HTTP-запросы
 - `storybook/addon-essentials` для документирования компонентов
 - `storybook/addon-interactions` позволяет создавать и тестировать интерактивные компоненты
-- `storybook/addon-styling` предназначен для работы со стилями и CSS
+- `storybook/addon-styling` предназначен для работы со стилями
 
-
+<br>
 
 Команда для запуска
 
@@ -120,13 +146,15 @@ npm run l:ts:fix
 npm run story
 ```
 
+<br>
+
 ## Тестирование
 
 -  `jest` - Unit тесты
 
 -  `React testing library` - Тесты на компоненты
 
-
+<br>
 
 Команда для запуска
 
@@ -134,12 +162,14 @@ npm run story
 npm run t:unit
 ```
 
+<br>
+
 ### Скриншотное тестирование
 
 -  `Storycap` - Cоздание скриншотов
 -  `reg-cli` - Cравнение скриншотов и генерация отчета в report.html
 
-
+<br>
 
 Команды для запуска
 
@@ -154,6 +184,8 @@ npm run t:ui
 npm run ref
 ```
 
+<br>
+
 ## Сборщики
 
 `Webpack` и `vite`
@@ -165,18 +197,23 @@ npm run ref
 - `babel/plugin-transform-typescript` Транспиляция TypeScript
 - `ForkTsCheckerWebpackPlugin` Проверка типов в отдельный процесс
 
-## Оптимизация
+<br>
 
-- `createSelector` для мемоизации селекторов [Пример](/src/pages/ArticleDetailsPage/model/selectors/article.ts)
-- `useCallback`, `useMemo` и `memo` для оптимизации лишних рендеров [Пример](/src/entities/Article/ui/ArticleDetails/ArticleDetails.tsx)
-- `IntersectionObserver` для бесконечного скролла в хуке [useInfiniteScroll](/src/shared/lib/hooks/useInfiniteScroll.ts)
-- [useThrottle](/src/shared/lib/hooks/useThrottle.ts) позволяет вызвать переданный callback не чаще, чем один раз в заданный промежуток времени. Используется в при скролле в [Page](/src/widgets/Page/ui/Page/Page.tsx)
-- [useDebounce](/src/shared/lib/hooks/useDebounce.ts) позволяет отложить выполнение переданного callback на заданный промежуток времени. Используется для оптимизации поискового запроса в [ArticlesPageFilters](/src/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters.tsx)
+Конфигурация находится в [/config](/config)
+
+- [/config/babel](/config/babel) - babel
+- [/config/build](/config/build) - конфигурация webpack
+- [/config/jest](/config/jest) - конфигурация тестовой среды
+- [/config/storybook](/config/storybook) - конфигурация storybook
+
+<br>
 
 ## Инструменты для поиска ошибок
 
 - [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) анализ размера банда
 - [react-error-boundary](https://github.com/bvaughn/react-error-boundary) позволяет перехватывать ошибки, которые происходят в дочерних компонентах и обрабатать их
+
+<br>
 
 ## CI pipeline и pre commit хуки
 

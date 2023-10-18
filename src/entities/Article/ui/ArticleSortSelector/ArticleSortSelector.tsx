@@ -1,8 +1,8 @@
-import { memo, useCallback, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { SortOrder } from '@/shared/types';
 import { Select, SelectOption } from '@/shared/ui/Select';
+import { memo, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ArticleSortField } from '../../model/consts/consts';
 import cls from './ArticleSortSelector.module.scss';
 
@@ -14,10 +14,13 @@ interface ArticleSortSelectorProps {
   onChangeOrder: (newOrder: SortOrder) => void;
 }
 
+// Благодаря memo компонент будет перерендериваться только если его пропсы изменились.
 export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
   const { className, onChangeSort, onChangeOrder, order, sort } = props;
   const { t } = useTranslation('filters');
 
+  // useMemo используется для кэширования массивов orderOptions и sortFieldOptions.
+  // предотвращает создание нового массива при каждом рендере
   const orderOptions = useMemo<SelectOption[]>(() => [
     {
       value: 'asc',
@@ -44,6 +47,8 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     },
   ], [t]);
 
+  // useCallback используется для кэширования функций changeSortHandler и changeOrderHandler
+  // Предотвращает создание новой функции при каждом рендере
   const changeSortHandler = useCallback((newSort: string) => {
     onChangeSort(newSort as ArticleSortField);
   }, [onChangeSort]);
