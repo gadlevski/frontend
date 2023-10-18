@@ -1,4 +1,5 @@
 import i18n from '@/shared/config/i18n/i18n';
+import { Theme } from '@/shared/const/theme';
 import type { Preview } from '@storybook/react';
 import { Suspense } from 'react';
 import { I18nextProvider } from 'react-i18next';
@@ -20,6 +21,13 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/,
       },
+    },
+    themes: {
+      default: 'light',
+      list: [
+        { name: 'light', class: Theme.LIGHT, color: '#ffffff' },
+        { name: 'dark', class: Theme.DARK, color: '#000000' },
+      ],
     },
   },
   decorators: [

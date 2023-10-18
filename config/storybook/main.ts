@@ -8,7 +8,12 @@ const config: StorybookConfig = {
   framework: '@storybook/react-webpack5',
   stories: ['../../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
-    '@storybook/addon-essentials',
+    {
+      name: '@storybook/addon-essentials',
+      options: {
+        backgrounds: false,
+      },
+    },
     {
       name: '@storybook/addon-styling',
       options: {
@@ -18,6 +23,7 @@ const config: StorybookConfig = {
       },
     },
     'storybook-addon-mock',
+    'storybook-addon-themes',
   ],
   webpackFinal: async (storybookWebpackConfig) => {
     const paths: BuildPaths = {

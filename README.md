@@ -19,12 +19,8 @@
 ### Работа с данными
 
 - `reduxjs/toolkit` Взаимодействие с данными
-
 - `EntityAdapter` позволяет нормализовать данные 
-
 - `RTK query` для запросов на сервер 
-
-- [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx) для асинхронного подключения редюсеров 
 
 <br>
 
@@ -87,6 +83,7 @@ npm run dev:vite
 - `lazy` для динамической загрузки компонента [Пример](/src/features/ArticleRating/ui/ArticleRating/ArticleRating.async.tsx)
 - `Suspense` для отображения Skeleton, пока идет загрузка основного компонента [Пример](/src/features/ArticleRating/ui/ArticleRating/ArticleRating.async.tsx)
 - `IntersectionObserver` для бесконечного скролла в хуке [useInfiniteScroll](/src/shared/lib/hooks/useInfiniteScroll.ts)
+- [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx) для асинхронного подключения редюсеров 
 - [useThrottle](/src/shared/lib/hooks/useThrottle.ts) позволяет вызвать переданный callback не чаще, чем один раз в заданный промежуток времени. Используется в при скролле в [Page](/src/widgets/Page/ui/Page/Page.tsx)
 - [useDebounce](/src/shared/lib/hooks/useDebounce.ts) позволяет отложить выполнение переданного callback на заданный промежуток времени. Используется для оптимизации поискового запроса в [ArticlesPageFilters](/src/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters.tsx)
 
