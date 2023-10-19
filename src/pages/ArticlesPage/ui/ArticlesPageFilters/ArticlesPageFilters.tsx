@@ -1,4 +1,7 @@
-import { ArticleEnum, ArticleSortField, ArticleSortSelector, ArticleTypeTabs, ArticleView, ArticleViewSelector } from '@/entities/Article';
+import { ArticleEnum, ArticleSortField, ArticleView } from '@/entities/Article';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce';
@@ -8,7 +11,10 @@ import { Input } from '@/shared/ui/Input';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType, getArticlesPageView } from '../../model/selectors/articlesPageSelectors';
+import {
+  getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort,
+  getArticlesPageType, getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPageFilters.module.scss';

@@ -77,8 +77,8 @@ npm run dev:vite
 ## Оптимизация производительности
 
 - `useCallback` предотвращает создание новой функции при каждом рендере [Пример](/src/entities/Article/ui/ArticleDetails/ArticleDetails.tsx)
-- `useMemo` предотвращает создание нового массива при каждом рендере [Пример](/src/entities/Article/ui/ArticleSortSelector/ArticleSortSelector.tsx)
-- `memo` компонент будет перерендериваться только если его пропсы изменились [Пример](/src/entities/Article/ui/ArticleSortSelector/ArticleSortSelector.tsx)
+- `useMemo` предотвращает создание нового массива при каждом рендере [Пример](/src/features/ArticleSortSelector/ui/ArticleSortSelector/ArticleSortSelector.tsx)
+- `memo` компонент будет перерендериваться только если его пропсы изменились [Пример](/src/features/ArticleSortSelector/ui/ArticleSortSelector/ArticleSortSelector.tsx)
 - `createSelector` для мемоизации селекторов [Пример](/src/pages/ArticleDetailsPage/model/selectors/article.ts)
 - `lazy` для динамической загрузки компонента [Пример](/src/features/ArticleRating/ui/ArticleRating/ArticleRating.async.tsx)
 - `Suspense` для отображения Skeleton, пока идет загрузка основного компонента [Пример](/src/features/ArticleRating/ui/ArticleRating/ArticleRating.async.tsx)
