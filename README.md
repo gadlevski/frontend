@@ -86,6 +86,9 @@ npm run dev:vite
 - [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx) для асинхронного подключения редюсеров 
 - [useThrottle](/src/shared/lib/hooks/useThrottle.ts) позволяет вызвать переданный callback не чаще, чем один раз в заданный промежуток времени. Используется в при скролле в [Page](/src/widgets/Page/ui/Page/Page.tsx)
 - [useDebounce](/src/shared/lib/hooks/useDebounce.ts) позволяет отложить выполнение переданного callback на заданный промежуток времени. Используется для оптимизации поискового запроса в [ArticlesPageFilters](/src/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters.tsx)
+- Различные среды для транспиляции и тестирования сборок в [.browserslistrc](.browserslistrc)
+- `eval-cheap-module-source-map` опция в Webpack, которая позволяет ускорить генерацию source map [Пример](/config/build/buildWebpackConfig.ts)
+- `cacheDirectory` опция в babel-loader для кеширования частей сборки [Пример](/config/build/buildWebpackConfig.ts)
 
 <br>
 
@@ -208,7 +211,8 @@ npm run ref
 
 ## Инструменты для поиска ошибок
 
-- [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) анализ размера банда
+- `Redux DevTools` для отладки стейта приложения
+- [Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) для анализа размера банда
 - [react-error-boundary](https://github.com/bvaughn/react-error-boundary) позволяет перехватывать ошибки, которые происходят в дочерних компонентах и обрабатать их
 
 <br>
