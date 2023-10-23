@@ -87,7 +87,7 @@ npm run dev:vite
 - [useThrottle](/src/shared/lib/hooks/useThrottle.ts) позволяет вызвать переданный callback не чаще, чем один раз в заданный промежуток времени. Используется в при скролле в [Page](/src/widgets/Page/ui/Page/Page.tsx)
 - [useDebounce](/src/shared/lib/hooks/useDebounce.ts) позволяет отложить выполнение переданного callback на заданный промежуток времени. Используется для оптимизации поискового запроса в [ArticlesPageFilters](/src/pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters.tsx)
 - Различные среды для транспиляции и тестирования сборок в [.browserslistrc](.browserslistrc)
-- `eval-cheap-module-source-map` опция в Webpack, которая позволяет ускорить генерацию source map [Пример](/config/build/buildWebpackConfig.ts)
+- `eval-cheap-module-source-map` опция в конфигурации Webpack, которая позволяет ускорить генерацию source map [Пример](/config/build/buildWebpackConfig.ts)
 - `cacheDirectory` опция в babel-loader для кеширования частей сборки [Пример](/config/build/buildWebpackConfig.ts)
 
 <br>
