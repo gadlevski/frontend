@@ -1,7 +1,7 @@
-import { Listbox as HListBox } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
+import { Listbox as HListBox } from '@headlessui/react';
+import { Fragment, ReactNode } from 'react';
 import { Button } from '../../../Button/Button';
 import { HStack } from '../../../Stack';
 import { mapDirectionClass } from '../../styles/consts';
@@ -49,7 +49,7 @@ export function ListBox(props: ListBoxProps) {
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button className={cls.trigger}>
+        <HListBox.Button className={cls.trigger} as="div">
           <Button disabled={readonly}>
             {value ?? defaultValue}
           </Button>
