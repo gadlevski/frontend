@@ -89,6 +89,7 @@ npm run dev:vite
 - Различные среды для транспиляции и тестирования сборок в [.browserslistrc](.browserslistrc)
 - `eval-cheap-module-source-map` опция в конфигурации Webpack, которая позволяет ускорить генерацию source map [Пример](/config/build/buildWebpackConfig.ts)
 - `cacheDirectory` опция в babel-loader для кеширования частей сборки [Пример](/config/build/buildWebpackConfig.ts)
+- `lint-staged` позволяет исправлять линтером только изменененные файлы [Пример](/package.json)
 
 <br>
 
