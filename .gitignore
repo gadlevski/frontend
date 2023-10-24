@@ -1,5 +1,4 @@
 /build
 node_modules
-/storybook-static
-__screenshots__/current/
-/reports
+/dist-storybook
+/reports/storybook/screenshots/current

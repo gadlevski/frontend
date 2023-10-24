@@ -1,13 +1,15 @@
 import { Article } from '@/entities/Article';
+import articlelogo from '@/shared/assets/test/articlelogo.png';
 import { storeDecorator } from '@/shared/config/storybook/storeDecorator';
 import { themeDecorator } from '@/shared/config/storybook/themeDecorator';
 import { Theme } from '@/shared/const/theme';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
+
 const article: Article = {
   id: '1',
-  img: 'https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png',
+  img: articlelogo,
   createdAt: '',
   views: 123,
   user: { id: '1', username: '123' },

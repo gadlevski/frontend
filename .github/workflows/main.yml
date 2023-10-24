@@ -5,8 +5,48 @@ on:
     branches: [master, fix_ui_test]
   pull_request:
     branches: [master]
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 jobs:
-  Pipline:
+  # build-and-test:
+  #   runs-on: ubuntu-20.04
+  #   strategy:
+  #     matrix: 
+  #       node-version: [ 16.18.1 ]
+  #   steps:
+  #     - uses: actions/checkout@v2
+
+  #     - name: Starting NodeJS ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v1
+  #       with: 
+  #         node-version: ${{ matrix.node-version }}
+
+  #     - name: Install Dependencies
+  #       run: npm ci
+
+  #     - name: Build production project
+  #       if: always()
+  #       run: npm run b:prod
+
+  #     - name: Build storybook
+  #       run: npm run story:b
+
+  #     - name: Generate current UI test screenshots
+  #       run: npm run cur
+
+  #     - name: Compare UI test screenshots with reference
+  #       run: npm run t:ui
+          
+  #     - name: Upload artifacts
+  #       if: always()
+  #       uses: actions/upload-artifact@v2
+  #       with:
+  #         name: test-artifacts
+  #         path: 'reports/storybook/**'
+  
+  checks:
     runs-on: ubuntu-20.04
     strategy:
       matrix: 
@@ -16,20 +56,16 @@ jobs:
 
       - name: Starting NodeJS ${{ matrix.node-version }}
         uses: actions/setup-node@v1
-        with: 
+        with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install Dependencies
-        run: npm install
-
-      - name: Build production project
-        if: always()
-        run: npm run b:prod
+        run: npm ci
 
       - name: Linting typescript with Eslint
         if: always()
         run: npm run l:ts
-        
+
       - name: Linting scss with Stylelint
         if: always()
         run: npm run l:scss
@@ -37,19 +73,3 @@ jobs:
       - name: Unit testing with Jest
         if: always()
         run: npm run t:unit
-            
-      #- name: Generate current UI test screenshots
-      #  run: npm run cur
-
-      #- name: Compare UI test screenshots with reference
-      #  run: npm run t:ui
-
-      #- name: Upload artifacts
-      #  uses: actions/upload-artifact@v2
-      #  if: always()
-      #  with:
-      #    name: test-artifacts
-      #    path: |
-      #      report.html
-      #      report.json
-      #      __screenshots__/**/*
