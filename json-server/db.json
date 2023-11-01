@@ -562,6 +562,15 @@
         "MANAGER"
       ],
       "avatar": "/avatar2.png"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "/avatar2.png"
     }
   ],
   "profile": [

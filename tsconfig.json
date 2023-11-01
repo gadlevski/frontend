@@ -32,6 +32,9 @@
     "json-server/index.js",
     "scripts/**/*.ts",
     "vite.config.ts",
-    ".eslintrc.js"
+    ".eslintrc.js",
+    "cypress/**/*.ts",
+    "cypress/**/*.tsx",
+    "cypress.config.ts"
   ],
 }
