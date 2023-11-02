@@ -152,9 +152,11 @@ npm run story
 
 ## Тестирование
 
--  `jest` - Unit тесты
+### Unit тесты
 
--  `React testing library` - Тесты на компоненты
+-  `jest` 
+
+-  `React testing library`
 
 <br>
 
@@ -184,6 +186,20 @@ npm run t:ui
 
 # Утверждение скриншотов как эталонных 
 npm run ref
+```
+
+<br>
+
+### E2E тестирование
+
+- `Cypress` [Пример](/cypress/e2e/article/articles-list.cy.ts)
+
+<br>
+
+Команда для запуска
+
+```bash
+npm run t:e2e
 ```
 
 <br>
