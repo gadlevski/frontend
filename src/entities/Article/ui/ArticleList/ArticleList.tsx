@@ -1,7 +1,7 @@
-import { HTMLAttributeAnchorTarget, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize } from '@/shared/ui/Text';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -44,7 +44,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
     );
   }
   return (
-    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+    <div
+      data-testid="ArticleList"
+      className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+    >
       {articles.length > 0
         ? articles.map(renderArticle)
         : null}
