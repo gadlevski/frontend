@@ -11,11 +11,5 @@ export const BugButton = () => {
     }
   }, [error]);
 
-  return (
-    <Button
-      onClick={() => setError(true)}
-    >
-      {t('generateError')}
-    </Button>
-  );
+  return <Button onClick={() => setError(true)}>{t('generateError')}</Button>;
 };

@@ -7,7 +7,6 @@ import { ArticleTypeTabs } from './ArticleTypeTabs';
 const meta = {
   title: 'entities/ArticleTypeTabs',
   component: ArticleTypeTabs,
-
 } satisfies Meta<typeof ArticleTypeTabs>;
 
 export default meta;
@@ -15,8 +14,5 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
   args: { value: ArticleEnum.ALL },
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
-

@@ -10,7 +10,7 @@ interface ProfilePageProps {
 }
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
-  const { id: profileId } = useParams<{ id: string; }>();
+  const { id: profileId } = useParams<{ id: string }>();
 
   if (!profileId) return null;
 

@@ -27,25 +27,19 @@ export const ProfileCardLight: Story = {
       currency: Currency.RUB,
     },
   },
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const WithError: Story = {
   args: {
     error: 'Некорректные данные',
   },
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT)],
 };
 
 export const Loading: Story = {
   args: {
     isLoading: true,
   },
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT)],
 };

@@ -6,7 +6,6 @@ import { Theme } from '@/shared/const/theme';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
-
 const article: Article = {
   id: '1',
   img: articlelogo,
@@ -36,7 +35,6 @@ const meta = {
       },
     ],
   },
-
 } satisfies Meta<typeof ArticleRecommendationsList>;
 
 export default meta;
@@ -44,8 +42,5 @@ type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
   args: {},
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({})],
 };

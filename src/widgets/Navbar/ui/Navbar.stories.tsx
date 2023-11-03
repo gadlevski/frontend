@@ -7,7 +7,6 @@ import { Navbar } from './Navbar';
 const meta = {
   title: 'widget/Navbar',
   component: Navbar,
-
 } satisfies Meta<typeof Navbar>;
 
 export default meta;
@@ -22,6 +21,8 @@ export const NavbarDark: Story = {
 };
 
 export const NavbarAuth: Story = {
-  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({ user: { authData: {} } })],
+  decorators: [
+    themeDecorator(Theme.LIGHT),
+    storeDecorator({ user: { authData: {} } }),
+  ],
 };
-

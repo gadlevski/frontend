@@ -7,7 +7,6 @@ import { ProfileSchema } from '../types/editableProfileCardSchema';
 import { profileActions, profileReducer } from './profileSlice';
 
 describe('profileSlice', () => {
-
   const data = {
     avatar: avatar,
     first: 'Andrei',
@@ -21,10 +20,9 @@ describe('profileSlice', () => {
 
   test('Проверка readonly', () => {
     const state: DeepPartial<ProfileSchema> = { readonly: false };
-    expect(profileReducer(
-      (state as ProfileSchema),
-      profileActions.setReadonly(true),
-    )).toEqual({ readonly: true });
+    expect(
+      profileReducer(state as ProfileSchema, profileActions.setReadonly(true)),
+    ).toEqual({ readonly: true });
   });
 
   test('Проверка cancelEdit', () => {
@@ -35,10 +33,9 @@ describe('profileSlice', () => {
       },
     };
 
-    expect(profileReducer(
-      (state as ProfileSchema),
-      profileActions.cancelEdit(),
-    )).toEqual({
+    expect(
+      profileReducer(state as ProfileSchema, profileActions.cancelEdit()),
+    ).toEqual({
       readonly: true,
       validateErrors: undefined,
       data,
@@ -53,10 +50,12 @@ describe('profileSlice', () => {
       },
     };
 
-    expect(profileReducer(
-      (state as ProfileSchema),
-      profileActions.updateProfile({ username: 'admin2' }),
-    )).toEqual({
+    expect(
+      profileReducer(
+        state as ProfileSchema,
+        profileActions.updateProfile({ username: 'admin2' }),
+      ),
+    ).toEqual({
       form: {
         username: 'admin2',
       },
@@ -69,10 +68,9 @@ describe('profileSlice', () => {
       validateErrors: [ValidateProfileError.SERVER_ERROR],
     };
 
-    expect(profileReducer(
-      state as ProfileSchema,
-      updateProfileData.pending,
-    )).toEqual({
+    expect(
+      profileReducer(state as ProfileSchema, updateProfileData.pending),
+    ).toEqual({
       isLoading: true,
       validateErrors: undefined,
     });
@@ -84,10 +82,12 @@ describe('profileSlice', () => {
       validateErrors: [ValidateProfileError.SERVER_ERROR],
     };
 
-    expect(profileReducer(
-      (state as ProfileSchema),
-      updateProfileData.fulfilled(data, ''),
-    )).toEqual({
+    expect(
+      profileReducer(
+        state as ProfileSchema,
+        updateProfileData.fulfilled(data, ''),
+      ),
+    ).toEqual({
       isLoading: false,
       validateErrors: [ValidateProfileError.SERVER_ERROR],
       readonly: true,
@@ -95,5 +95,4 @@ describe('profileSlice', () => {
       data,
     });
   });
-
 });

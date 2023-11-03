@@ -7,7 +7,6 @@ import ArticleEditPage from './ArticleEditPage';
 const meta = {
   title: 'pages/ArticleEditPage',
   component: ArticleEditPage,
-
 } satisfies Meta<typeof ArticleEditPage>;
 
 export default meta;
@@ -15,17 +14,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
   args: {},
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({})],
 };
 
 export const Dark: Story = {
   args: {},
-  decorators: [
-    themeDecorator(Theme.DARK),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.DARK), storeDecorator({})],
 };
-

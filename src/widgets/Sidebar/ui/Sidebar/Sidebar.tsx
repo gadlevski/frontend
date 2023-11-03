@@ -24,17 +24,17 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
     setCollapsed((prev) => !prev);
   };
 
-  const itemsList = useMemo(() => sidebarItemsList.map((item) => (
-    <SidebarItem
-      item={item}
-      isCollapsed={isCollapsed}
-      key={item.path}
-    />
-  )), [isCollapsed, sidebarItemsList]);
+  const itemsList = useMemo(
+    () =>
+      sidebarItemsList.map((item) => (
+        <SidebarItem item={item} isCollapsed={isCollapsed} key={item.path} />
+      )),
+    [isCollapsed, sidebarItemsList],
+  );
 
   return (
     <aside
-      data-testid='sidebar'
+      data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: isCollapsed }, [
         className,
       ])}
@@ -49,8 +49,8 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
         </Suspense>
       </div>
       <Button
-        data-testid='sidebar-toggle'
-        type='button'
+        data-testid="sidebar-toggle"
+        type="button"
         onClick={onToggle}
         className={cls.collapseBtn}
         theme={ThemeButton.BACKGROUND_INVERTED}

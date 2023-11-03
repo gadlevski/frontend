@@ -9,6 +9,7 @@ module.exports = {
     'plugin:i18next/recommended',
     'plugin:storybook/recommended',
     'plugin:react-hooks/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -24,9 +25,9 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['warn', {
       'argsIgnorePattern': '^_',
     }],
-    'indent': [2, 2, { 'SwitchCase': 1 }],
-    'react/jsx-indent': [2, 2],
-    'react/jsx-indent-props': [2, 2],
+    // 'indent': [2, 2, { 'SwitchCase': 1 }],
+    // 'react/jsx-indent': [2, 2],
+    // 'react/jsx-indent-props': [2, 2],
     'react/button-has-type': [1, {
       'button': true,
       'submit': true,
@@ -69,6 +70,7 @@ module.exports = {
         'tsx': 'never',
       },
     ],
+    'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
   },
   settings: {
     'react': {

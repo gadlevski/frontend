@@ -21,31 +21,37 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 
   // useMemo используется для кэширования массивов orderOptions и sortFieldOptions.
   // предотвращает создание нового массива при каждом рендере
-  const orderOptions = useMemo<SelectOption<SortOrder>[]>(() => [
-    {
-      value: 'asc',
-      content: t('asc'),
-    },
-    {
-      value: 'desc',
-      content: t('desc'),
-    },
-  ], [t]);
+  const orderOptions = useMemo<SelectOption<SortOrder>[]>(
+    () => [
+      {
+        value: 'asc',
+        content: t('asc'),
+      },
+      {
+        value: 'desc',
+        content: t('desc'),
+      },
+    ],
+    [t],
+  );
 
-  const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
-    {
-      value: ArticleSortField.CREATED,
-      content: t('date'),
-    },
-    {
-      value: ArticleSortField.TITLE,
-      content: t('name'),
-    },
-    {
-      value: ArticleSortField.VIEWS,
-      content: t('views'),
-    },
-  ], [t]);
+  const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(
+    () => [
+      {
+        value: ArticleSortField.CREATED,
+        content: t('date'),
+      },
+      {
+        value: ArticleSortField.TITLE,
+        content: t('name'),
+      },
+      {
+        value: ArticleSortField.VIEWS,
+        content: t('views'),
+      },
+    ],
+    [t],
+  );
 
   return (
     <div className={classNames(cls.ArticleSortSelector, {}, [className])}>

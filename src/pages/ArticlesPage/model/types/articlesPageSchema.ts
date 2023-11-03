@@ -1,4 +1,9 @@
-import { Article, ArticleEnum, ArticleSortField, ArticleView } from '@/entities/Article';
+import {
+  Article,
+  ArticleEnum,
+  ArticleSortField,
+  ArticleView,
+} from '@/entities/Article';
 import { SortOrder } from '@/shared/types/sort';
 import { EntityState } from '@reduxjs/toolkit';
 

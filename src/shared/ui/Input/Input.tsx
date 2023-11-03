@@ -2,7 +2,11 @@ import { FC, InputHTMLAttributes, memo, useEffect, useRef } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder' | 'readonly'> {
+interface InputProps
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'placeholder' | 'readonly'
+  > {
   className?: string;
   value?: string | number;
   onChange?: (value: string) => void;
@@ -39,10 +43,11 @@ export const Input: FC<InputProps> = memo((props) => {
     }
   }, [autofocus]);
 
-
   return (
     <div className={classNames(cls.InputWrapper, mods, [className])}>
-      {typeof placeholder === 'string' && <div className={cls.placeholder}>{placeholder}</div>}
+      {typeof placeholder === 'string' && (
+        <div className={cls.placeholder}>{placeholder}</div>
+      )}
       <input
         ref={inputRef}
         type={type}

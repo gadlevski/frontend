@@ -6,7 +6,6 @@ import { CommentCard } from './CommentCard';
 const meta = {
   title: 'entities/CommentCard',
   component: CommentCard,
-
 } satisfies Meta<typeof CommentCard>;
 
 export default meta;
@@ -39,4 +38,3 @@ export const Loading: Story = {
   },
   decorators: [themeDecorator(Theme.LIGHT)],
 };
-

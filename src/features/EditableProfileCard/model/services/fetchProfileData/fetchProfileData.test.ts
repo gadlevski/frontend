@@ -4,7 +4,6 @@ import avatar from '@/shared/assets/test/avatar.png';
 import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk';
 import { fetchProfileData } from './fetchProfileData';
 
-
 const data = {
   avatar: avatar,
   first: 'Andrei',
@@ -16,11 +15,8 @@ const data = {
   currency: Currency.RUB,
 };
 
-
 describe('fetchProfileData', () => {
-
   test('Успешное выполнение', async () => {
-
     const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockReturnValue(Promise.resolve({ data: data }));
     const result = await thunk.callThunk('1');

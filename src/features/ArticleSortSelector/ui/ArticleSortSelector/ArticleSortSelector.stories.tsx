@@ -8,7 +8,6 @@ import { ArticleSortSelector } from './ArticleSortSelector';
 const meta = {
   title: 'features/ArticleSortSelector',
   component: ArticleSortSelector,
-
 } satisfies Meta<typeof ArticleSortSelector>;
 
 export default meta;
@@ -16,9 +15,5 @@ type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
   args: { order: 'asc', sort: ArticleSortField.CREATED },
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({})],
 };
-

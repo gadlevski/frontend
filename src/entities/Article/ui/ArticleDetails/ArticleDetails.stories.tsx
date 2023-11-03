@@ -10,7 +10,6 @@ import { ArticleDetails } from './ArticleDetails';
 const meta = {
   title: 'entities/ArticleDetails',
   component: ArticleDetails,
-
 } satisfies Meta<typeof ArticleDetails>;
 
 export default meta;
@@ -98,4 +97,3 @@ export const Error: Story = {
     }),
   ],
 };
-

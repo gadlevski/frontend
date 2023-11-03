@@ -20,9 +20,12 @@ export const CountrySelect: FC<CountrySelectProps> = memo((props) => {
   const { value, onChange, readonly } = props;
   const { t } = useTranslation('common');
 
-  const onChangeHandler = useCallback((valueSelect: string) => {
-    onChange?.(valueSelect as Country);
-  }, [onChange]);
+  const onChangeHandler = useCallback(
+    (valueSelect: string) => {
+      onChange?.(valueSelect as Country);
+    },
+    [onChange],
+  );
 
   return (
     <ListBox

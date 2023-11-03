@@ -8,7 +8,6 @@ import ArticleDetailsPage from './ArticleDetailsPage';
 const meta = {
   title: 'pages/ArticleDetailsPage',
   component: ArticleDetailsPage,
-
 } satisfies Meta<typeof ArticleDetailsPage>;
 
 export default meta;
@@ -56,9 +55,7 @@ const article: Article = {
 };
 
 export const Light: Story = {
-  args: {
-
-  },
+  args: {},
   decorators: [
     themeDecorator(Theme.LIGHT),
     storeDecorator({
@@ -68,5 +65,3 @@ export const Light: Story = {
     }),
   ],
 };
-
-

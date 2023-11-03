@@ -10,14 +10,14 @@ interface StoreProviderProps {
   children?: ReactNode;
 }
 
-export const StoreProvider: FC<StoreProviderProps> = ({ children, initialState, asyncReducers }) => {
+export const StoreProvider: FC<StoreProviderProps> = ({
+  children,
+  initialState,
+  asyncReducers,
+}) => {
   const store = createReduxStore(
     initialState as StateSchema,
     asyncReducers as ReducersMapObject<StateSchema>,
   );
-  return (
-    <Provider store={store}>
-      {children}
-    </Provider>
-  );
+  return <Provider store={store}>{children}</Provider>;
 };

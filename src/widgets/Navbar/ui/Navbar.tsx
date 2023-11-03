@@ -27,7 +27,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     setIsAuthModal(true);
   }, []);
 
-
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
@@ -40,10 +39,16 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
-      <Button onClick={onShowModal} theme={ThemeButton.OUTLINE} className={cls.links}>
+      <Button
+        onClick={onShowModal}
+        theme={ThemeButton.OUTLINE}
+        className={cls.links}
+      >
         {t('login')}
       </Button>
-      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+      )}
     </header>
   );
 });

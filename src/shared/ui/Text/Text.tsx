@@ -61,17 +61,15 @@ export const Text = memo((props: TextProps) => {
   return (
     <div className={classNames(cls.Text, mods, [className])}>
       {typeof title === 'string' && (
-        <HeaderTag
-          className={cls.title}
-          data-testid={`${dataTestId}.Header`}>
+        <HeaderTag className={cls.title} data-testid={`${dataTestId}.Header`}>
           {title}
-        </HeaderTag>)}
+        </HeaderTag>
+      )}
       {typeof text === 'string' && (
-        <p
-          className={cls.text}
-          data-testid={`${dataTestId}.Paragraph`}>
+        <p className={cls.text} data-testid={`${dataTestId}.Paragraph`}>
           {text}
-        </p>)}
+        </p>
+      )}
     </div>
   );
 });

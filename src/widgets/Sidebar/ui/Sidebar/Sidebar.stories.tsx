@@ -7,7 +7,6 @@ import { Sidebar } from './Sidebar';
 const meta = {
   title: 'widget/Sidebar',
   component: Sidebar,
-
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
@@ -20,7 +19,8 @@ export const Light: Story = {
       user: {
         authData: {},
       },
-    })],
+    }),
+  ],
 };
 
 export const Dark: Story = {
@@ -30,7 +30,8 @@ export const Dark: Story = {
       user: {
         authData: {},
       },
-    })],
+    }),
+  ],
 };
 
 export const SidebarNoAuthLight: Story = {
@@ -40,4 +41,3 @@ export const SidebarNoAuthLight: Story = {
 export const SidebarNoAuthDark: Story = {
   decorators: [themeDecorator(Theme.DARK), storeDecorator({ user: {} })],
 };
-

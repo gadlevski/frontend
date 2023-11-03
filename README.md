@@ -24,7 +24,7 @@
 
 <br>
 
-## Запуск проекта
+## Команды для запуска проекта
 
 ```bash
 npm run dev 
@@ -35,13 +35,13 @@ npm run dev:vite
 
 <br>
 
-## Архитектура проекта
+## Архитектура проекта (FSD)
 
 Проект написан в соответствии с методологией [Feature sliced design](https://feature-sliced.design/docs/get-started/tutorial)
 
 <br>
 
-### Пример использования FSD в проекте
+### Пример использования в проекте
 
 - [ArticleDetailsPage](/src/pages/ArticleDetailsPage/ui/ArticleDetailsPage/ArticleDetailsPage.tsx) и [ProfilePage](/src/pages/ProfilePage/ui/ProfilePage.tsx) - это слой `pages`.
   Страницы для отображения статьи и профиля пользователя
@@ -93,7 +93,7 @@ npm run dev:vite
 
 <br>
 
-## Линтинг
+## Линтинг (Stylelint, Eslint)
 
 `Stylelint` для проверки css и scss файлов
 
@@ -130,6 +130,22 @@ npm run l:ts:fix
 
 <br>
 
+## Форматирование кода (Prettier)
+
+`Prettier` для форматирования ts, tsx и json файлов
+
+Команды для запуска
+
+```bash
+# Проверка файлов
+npm run pre:check
+
+# Исправление файлов
+npm run pre:write
+```
+
+<br>
+
 ## Storybook
 
 Дополнительные плангины
@@ -150,7 +166,7 @@ npm run story
 
 <br>
 
-## Тестирование
+## Тестирование (Jest, RTL, Cypress)
 
 ### Unit тесты
 
@@ -204,7 +220,7 @@ npm run t:e2e
 
 <br>
 
-## Сборщики
+## Сборщики (Webpack, vite)
 
 `Webpack` и `vite`
 

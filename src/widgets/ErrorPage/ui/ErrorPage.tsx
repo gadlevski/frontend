@@ -24,9 +24,7 @@ export const ErrorPage: FC<ErrorPageProps> = (props) => {
   return (
     <div className={classNames(cls.ErrorPage, {}, [className])}>
       {t('error')}
-      <Button onClick={reloadPage}>
-        {t('reload')}
-      </Button>
+      <Button onClick={reloadPage}>{t('reload')}</Button>
     </div>
   );
 };

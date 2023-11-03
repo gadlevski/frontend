@@ -48,22 +48,32 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
   if (isLoading) {
     return (
-      <HStack justify="center" max className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}>
+      <HStack
+        justify="center"
+        max
+        className={classNames(cls.ProfileCard, { [cls.loading]: true }, [
+          className,
+        ])}
+      >
         <Loader />
-      </HStack >
+      </HStack>
     );
   }
 
   if (error) {
     return (
-      <HStack justify="center" max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+      <HStack
+        justify="center"
+        max
+        className={classNames(cls.ProfileCard, {}, [className, cls.error])}
+      >
         <Text
           theme={ThemeText.ERROR}
           title={t('errorTitle')}
           text={t('errorText')}
           align={TextAlign.CENTER}
         />
-      </HStack >
+      </HStack>
     );
   }
 
@@ -72,12 +82,16 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
   };
 
   return (
-    <VStack gap="8" max className={classNames(cls.ProfileCard, mods, [className])}>
-      {data?.avatar &&
+    <VStack
+      gap="8"
+      max
+      className={classNames(cls.ProfileCard, mods, [className])}
+    >
+      {data?.avatar && (
         <HStack justify="center" max className={cls.avatarWrapper}>
           <Avatar src={data?.avatar} />
         </HStack>
-      }
+      )}
       <Input
         className={cls.input}
         value={data?.first}

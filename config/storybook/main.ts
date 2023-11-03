@@ -3,7 +3,6 @@ import path from 'path';
 import { DefinePlugin, RuleSetRule } from 'webpack';
 import { BuildPaths } from '../build/types/config';
 
-
 const config: StorybookConfig = {
   framework: '@storybook/react-webpack5',
   stories: ['../../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -44,22 +43,25 @@ const config: StorybookConfig = {
     };
     storybookWebpackConfig!.resolve!.modules!.push(paths.src);
     storybookWebpackConfig!.resolve!.extensions!.push('.ts', '.tsx');
-    //@ts-ignore
-    storybookWebpackConfig!.module!.rules = storybookWebpackConfig!.module!.rules!.map((rule: RuleSetRule) => {
-      if (/svg/.test(rule.test as string)) {
-        return { ...rule, exclude: /\.svg$/i };
-      }
-      return rule;
-    });
+    storybookWebpackConfig!.module!.rules =
+      //@ts-ignore
+      storybookWebpackConfig!.module!.rules!.map((rule: RuleSetRule) => {
+        if (/svg/.test(rule.test as string)) {
+          return { ...rule, exclude: /\.svg$/i };
+        }
+        return rule;
+      });
     storybookWebpackConfig!.module!.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-    storybookWebpackConfig!.plugins!.push(new DefinePlugin({
-      __IS_DEV__: JSON.stringify(true),
-      __API__: JSON.stringify('http://testapi.ru'),
-      __PROJECT__: JSON.stringify('storybook'),
-    }));
+    storybookWebpackConfig!.plugins!.push(
+      new DefinePlugin({
+        __IS_DEV__: JSON.stringify(true),
+        __API__: JSON.stringify('http://testapi.ru'),
+        __PROJECT__: JSON.stringify('storybook'),
+      }),
+    );
     return storybookWebpackConfig;
   },
   staticDirs: [path.resolve(__dirname, '..', '..', 'public')],

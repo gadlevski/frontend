@@ -1,4 +1,9 @@
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
+import {
+  getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userActions,
+} from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -34,10 +39,14 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
       direction="bottom left"
       className={classNames('', {}, [className])}
       items={[
-        ...(isAdminPanelAvailable ? [{
-          content: t('admin panel'),
-          href: getRouteAdmin(),
-        }] : []),
+        ...(isAdminPanelAvailable
+          ? [
+              {
+                content: t('admin panel'),
+                href: getRouteAdmin(),
+              },
+            ]
+          : []),
         {
           content: t('profile'),
           href: getRouteProfile(authData.id),

@@ -7,23 +7,15 @@ import { NotFoundPage } from './NotFoundPage';
 const meta = {
   title: 'pages/NotFoundPage',
   component: NotFoundPage,
-
 } satisfies Meta<typeof NotFoundPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({})],
 };
 
 export const Dark: Story = {
-  decorators: [
-    themeDecorator(Theme.DARK),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.DARK), storeDecorator({})],
 };
-

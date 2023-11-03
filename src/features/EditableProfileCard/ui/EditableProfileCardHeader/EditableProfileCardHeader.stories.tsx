@@ -7,7 +7,6 @@ import { EditableProfileCardHeader } from './EditableProfileCardHeader';
 const meta = {
   title: 'features/EditableProfileCardHeader',
   component: EditableProfileCardHeader,
-
 } satisfies Meta<typeof EditableProfileCardHeader>;
 
 export default meta;
@@ -15,8 +14,5 @@ type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
   args: {},
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({})],
 };

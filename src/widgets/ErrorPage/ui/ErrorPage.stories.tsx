@@ -6,7 +6,6 @@ import { ErrorPage } from './ErrorPage';
 const meta = {
   title: 'widget/ErrorPage',
   component: ErrorPage,
-
 } satisfies Meta<typeof ErrorPage>;
 
 export default meta;
@@ -20,7 +19,6 @@ export const Light: Story = {
   decorators: [themeDecorator(Theme.LIGHT)],
 };
 
-
 export const Dark: Story = {
   args: {
     error: new Error('Sample Error Message'),
@@ -28,4 +26,3 @@ export const Dark: Story = {
   },
   decorators: [themeDecorator(Theme.DARK)],
 };
-

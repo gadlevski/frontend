@@ -29,7 +29,9 @@ export const Dark: Story = {
 export const WithError: Story = {
   decorators: [
     themeDecorator(Theme.LIGHT),
-    storeDecorator({ loginForm: { username: 'admin', password: '123', error: 'error' } }),
+    storeDecorator({
+      loginForm: { username: 'admin', password: '123', error: 'error' },
+    }),
   ],
 };
 

@@ -60,16 +60,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             alt={article.title}
           />
           {textBlock && (
-            <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
+            <ArticleTextBlockComponent
+              block={textBlock}
+              className={cls.textBlock}
+            />
           )}
           <div className={cls.footer}>
-            <AppLink
-              target={target}
-              to={getRouteArticleDetails(article.id)}
-            >
-              <Button theme={ThemeButton.OUTLINE}>
-                {t('read more')}
-              </Button>
+            <AppLink target={target} to={getRouteArticleDetails(article.id)}>
+              <Button theme={ThemeButton.OUTLINE}>{t('read more')}</Button>
             </AppLink>
             {views}
           </div>

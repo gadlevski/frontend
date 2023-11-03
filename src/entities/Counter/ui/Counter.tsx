@@ -20,9 +20,15 @@ export const Counter: FC = () => {
   };
   return (
     <div>
-      <h1 data-testid="value-title">{t('value')}: {counterValue}</h1>
-      <Button data-testid="increment-btn" onClick={increment}>{t('increment')}</Button>
-      <Button data-testid="decrement-btn" onClick={decrement}>{t('decrement')}</Button>
+      <h1 data-testid="value-title">
+        {t('value')}: {counterValue}
+      </h1>
+      <Button data-testid="increment-btn" onClick={increment}>
+        {t('increment')}
+      </Button>
+      <Button data-testid="decrement-btn" onClick={decrement}>
+        {t('decrement')}
+      </Button>
     </div>
   );
 };

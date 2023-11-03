@@ -10,7 +10,6 @@ import ProfilePage from './ProfilePage';
 const meta = {
   title: 'pages/ProfilePage',
   component: ProfilePage,
-
 } satisfies Meta<typeof ProfilePage>;
 
 export default meta;

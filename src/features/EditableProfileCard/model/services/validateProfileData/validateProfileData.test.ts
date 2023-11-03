@@ -4,7 +4,6 @@ import avatar from '@/shared/assets/test/avatar.png';
 import { ValidateProfileError } from '../../consts/consts';
 import { validateProfileData } from './validateProfileData';
 
-
 const data = {
   avatar: avatar,
   first: 'Andrei',
@@ -16,9 +15,7 @@ const data = {
   currency: Currency.RUB,
 };
 
-
 describe('validateProfileData', () => {
-
   test('Успешное выполнение', async () => {
     const result = validateProfileData(data);
     expect(result).toEqual([]);
@@ -26,23 +23,17 @@ describe('validateProfileData', () => {
 
   test('Не указан first и lastname', async () => {
     const result = validateProfileData({ ...data, first: '', lastname: '' });
-    expect(result).toEqual([
-      ValidateProfileError.INCORRECT_USER_DATA,
-    ]);
+    expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
   });
 
   test('Некорректно введен age', async () => {
     const result = validateProfileData({ ...data, age: undefined });
-    expect(result).toEqual([
-      ValidateProfileError.INCORRECT_AGE,
-    ]);
+    expect(result).toEqual([ValidateProfileError.INCORRECT_AGE]);
   });
 
   test('Не указана country', async () => {
     const result = validateProfileData({ ...data, country: undefined });
-    expect(result).toEqual([
-      ValidateProfileError.INCORRECT_COUNTRY,
-    ]);
+    expect(result).toEqual([ValidateProfileError.INCORRECT_COUNTRY]);
   });
 
   test('Несколько ошибок', async () => {

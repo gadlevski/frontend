@@ -7,7 +7,6 @@ import { Page } from './Page';
 const meta = {
   title: 'shared/Page',
   component: Page,
-
 } satisfies Meta<typeof Page>;
 
 export default meta;
@@ -15,10 +14,5 @@ type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
   args: { children: <></> },
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({})],
 };
-
-

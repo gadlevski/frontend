@@ -12,9 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
     "isolatedModules": true
   },
@@ -36,5 +34,5 @@
     "cypress/**/*.ts",
     "cypress/**/*.tsx",
     "cypress.config.ts"
-  ],
+  ]
 }

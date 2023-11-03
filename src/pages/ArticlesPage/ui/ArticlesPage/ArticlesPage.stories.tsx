@@ -7,7 +7,6 @@ import ArticlesPage from './ArticlesPage';
 const meta = {
   title: 'pages/ArticlesPage',
   component: ArticlesPage,
-
 } satisfies Meta<typeof ArticlesPage>;
 
 export default meta;
@@ -15,17 +14,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
   args: {},
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({})],
 };
 
 export const Dark: Story = {
   args: {},
-  decorators: [
-    themeDecorator(Theme.DARK),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.DARK), storeDecorator({})],
 };
-

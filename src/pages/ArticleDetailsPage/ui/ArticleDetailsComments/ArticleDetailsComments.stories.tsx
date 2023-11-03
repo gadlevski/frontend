@@ -7,7 +7,6 @@ import { ArticleDetailsComments } from './ArticleDetailsComments';
 const meta = {
   title: 'pages/ArticleDetailsComments',
   component: ArticleDetailsComments,
-
 } satisfies Meta<typeof ArticleDetailsComments>;
 
 export default meta;
@@ -17,8 +16,5 @@ export const Normal: Story = {
   args: {
     id: '1',
   },
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({})],
 };

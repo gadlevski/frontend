@@ -7,7 +7,6 @@ import ArticleRating from './ArticleRating';
 const meta = {
   title: 'features/ArticleRating',
   component: ArticleRating,
-
 } satisfies Meta<typeof ArticleRating>;
 
 export default meta;

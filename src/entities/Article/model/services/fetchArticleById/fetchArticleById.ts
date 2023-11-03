@@ -10,29 +10,30 @@ import { Article } from '../../types/article';
 >
 */
 
-export const fetchArticleById = createAsyncThunk<Article, string | undefined, ThunkConfig<string>>(
-  'articleDetails/fetchArticleById',
-  async (articleId, thunkApi) => {
-    const { extra, rejectWithValue } = thunkApi;
-    try {
-      if (!articleId) {
-        throw new Error('');
-      }
-
-      // Тип ожидаемого ответа
-      // Принимает как аргумент запрашиваемый URL
-      const response = await extra.api.get<Article>(`/articles/${articleId}`, {
-        params: {
-          _expand: 'user',
-        },
-      });
-      if (!response.data) {
-        throw new Error();
-      }
-      return response.data;
-    } catch (error) {
-      console.log('error', error);
-      return rejectWithValue('error');
+export const fetchArticleById = createAsyncThunk<
+  Article,
+  string | undefined,
+  ThunkConfig<string>
+>('articleDetails/fetchArticleById', async (articleId, thunkApi) => {
+  const { extra, rejectWithValue } = thunkApi;
+  try {
+    if (!articleId) {
+      throw new Error('');
     }
-  },
-);
+
+    // Тип ожидаемого ответа
+    // Принимает как аргумент запрашиваемый URL
+    const response = await extra.api.get<Article>(`/articles/${articleId}`, {
+      params: {
+        _expand: 'user',
+      },
+    });
+    if (!response.data) {
+      throw new Error();
+    }
+    return response.data;
+  } catch (error) {
+    console.log('error', error);
+    return rejectWithValue('error');
+  }
+});

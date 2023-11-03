@@ -6,7 +6,6 @@ import { Loader } from './Loader';
 const meta = {
   title: 'shared/Loader',
   component: Loader,
-
 } satisfies Meta<typeof Loader>;
 
 export default meta;
@@ -19,4 +18,3 @@ export const LoaderLight: Story = {
 export const LoaderDark: Story = {
   decorators: [themeDecorator(Theme.DARK)],
 };
-

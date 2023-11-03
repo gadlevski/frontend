@@ -21,4 +21,3 @@ export enum ArticleSortField {
   TITLE = 'title',
   CREATED = 'createdAt',
 }
-

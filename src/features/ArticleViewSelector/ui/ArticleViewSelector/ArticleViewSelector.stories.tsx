@@ -7,12 +7,10 @@ import { ArticleViewSelector } from './ArticleViewSelector';
 const meta = {
   title: 'entities/ArticleViewSelector',
   component: ArticleViewSelector,
-
 } satisfies Meta<typeof ArticleViewSelector>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 
 export const Normal: Story = {
   args: {
@@ -20,5 +18,3 @@ export const Normal: Story = {
   },
   decorators: [themeDecorator(Theme.LIGHT)],
 };
-
-

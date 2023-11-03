@@ -9,7 +9,6 @@ import AddCommentForm from './AddCommentForm';
 const meta = {
   title: 'features/AddCommentForm',
   component: AddCommentForm,
-
 } satisfies Meta<typeof AddCommentForm>;
 
 export default meta;
@@ -19,19 +18,12 @@ export const Light: Story = {
   args: {
     onSendComment: action('onSendComment'),
   },
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({})],
 };
 
 export const Dark: Story = {
   args: {
     onSendComment: action('onSendComment'),
   },
-  decorators: [
-    themeDecorator(Theme.DARK),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.DARK), storeDecorator({})],
 };
-

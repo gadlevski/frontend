@@ -7,7 +7,6 @@ import { NotificationList } from './NotificationList';
 const meta = {
   title: 'entities/NotificationList',
   component: NotificationList,
-
 } satisfies Meta<typeof NotificationList>;
 
 export default meta;
@@ -41,8 +40,5 @@ export const Normal: Story = {
       },
     ],
   },
-  decorators: [
-    themeDecorator(Theme.LIGHT),
-    storeDecorator({}),
-  ],
+  decorators: [themeDecorator(Theme.LIGHT), storeDecorator({})],
 };

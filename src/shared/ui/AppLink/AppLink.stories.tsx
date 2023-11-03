@@ -53,5 +53,3 @@ export const SecondaryDark: Story = {
   },
   decorators: [themeDecorator(Theme.DARK)],
 };
-
-

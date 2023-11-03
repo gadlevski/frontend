@@ -6,12 +6,10 @@ import { CommentList } from './CommentList';
 const meta = {
   title: 'entities/CommentList',
   component: CommentList,
-
 } satisfies Meta<typeof CommentList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
 
 const comments = [
   {
@@ -39,4 +37,3 @@ export const Loading: Story = {
   },
   decorators: [themeDecorator(Theme.LIGHT)],
 };
-
