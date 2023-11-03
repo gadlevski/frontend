@@ -3,3 +3,4 @@ node_modules
 /dist-storybook
 /reports/storybook/screenshots/current
 /reports/unit
+.env
