@@ -1,10 +1,9 @@
+// prettier-ignore
 import { getUserAuthData } from '@/entities/User';
-import AboutIcon from '@/shared/assets/icons/about.svg';
 import ArticleIcon from '@/shared/assets/icons/article.svg';
 import MainIcon from '@/shared/assets/icons/main.svg';
 import ProfileIcon from '@/shared/assets/icons/profile.svg';
 import {
-  getRouteAbout,
   getRouteArticles,
   getRouteMain,
   getRouteProfile,
@@ -20,27 +19,19 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
       text: 'main',
     },
     {
-      path: getRouteAbout(),
-      Icon: AboutIcon,
-      text: 'about',
+      path: getRouteArticles(),
+      Icon: ArticleIcon,
+      text: 'articles',
     },
   ];
 
   if (userData) {
-    sidebarItemsList.push(
-      {
-        path: getRouteProfile(userData.id),
-        Icon: ProfileIcon,
-        text: 'profile',
-        authOnly: true,
-      },
-      {
-        path: getRouteArticles(),
-        Icon: ArticleIcon,
-        text: 'articles',
-        authOnly: true,
-      },
-    );
+    sidebarItemsList.push({
+      path: getRouteProfile(userData.id),
+      Icon: ProfileIcon,
+      text: 'profile',
+      authOnly: true,
+    });
   }
 
   return sidebarItemsList;

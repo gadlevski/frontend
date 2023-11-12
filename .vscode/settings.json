@@ -4,8 +4,18 @@
   "i18n-ally.pathMatcher": "{locale}/{namespace}.json",
   "i18n-ally.keystyle": "nested",
   "i18n-ally.displayLanguage": "ru",
-  "stylelint.snippet": ["css", "less", "postcss", "scss"],
-  "stylelint.validate": ["css", "less", "postcss", "scss"],
+  "stylelint.snippet": [
+    "css",
+    "less",
+    "postcss",
+    "scss"
+  ],
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss"
+  ],
   "editor.defaultFormatter": "vscode.typescript-language-features",
   "editor.detectIndentation": false,
   "editor.codeActionsOnSave": {
@@ -32,6 +42,9 @@
     }
   ],
   "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

@@ -7,6 +7,7 @@ import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
 import { VStack } from '@/shared/ui/Stack';
 import { FC, Suspense, memo, useMemo, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
@@ -17,7 +18,9 @@ interface SidebarProps {
 }
 
 export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
-  const [isCollapsed, setCollapsed] = useState<boolean>(false);
+  const [isCollapsed, setCollapsed] = useState<boolean>(
+    isMobile ? true : false,
+  );
   const sidebarItemsList = useSelector(getSidebarItems);
 
   const onToggle = () => {

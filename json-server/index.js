@@ -37,10 +37,17 @@ server.post('/login', (req, res) => {
 
 // проверяем, авторизован ли пользователь
 server.use((req, res, next) => {
-  if (!req.headers.authorization) {
-    return res.status(403).json({ message: 'AUTH ERROR' });
+  // Проверяем, является ли запрос одним из запросов к статьям
+  if (req.path.startsWith('/articles')) {
+    // Если да, то пропускаем проверку авторизации
+    next();
+  } else {
+    // Для всех остальных запросов выполняем проверку авторизации
+    if (!req.headers.authorization) {
+      return res.status(403).json({ message: 'AUTH ERROR' });
+    }
+    next();
   }
-  next();
 });
 
 server.use(router);

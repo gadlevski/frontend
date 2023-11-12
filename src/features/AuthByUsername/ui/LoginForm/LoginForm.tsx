@@ -8,6 +8,7 @@ import { Button, ThemeButton } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 import { Text, ThemeText } from '@/shared/ui/Text';
 import { FC, memo, useCallback } from 'react';
+import { isDesktop } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
@@ -60,7 +61,11 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={classNames(cls.LoginForm, {}, [className])}>
+      <div
+        className={classNames(cls.LoginForm, { [cls.formClass]: isDesktop }, [
+          className,
+        ])}
+      >
         <Text title={t('Authorization form')} />
         {error && (
           <Text text={t('Authorization form error')} theme={ThemeText.ERROR} />
@@ -75,7 +80,7 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
         />
         <Input
           placeholder={t('Enter password')}
-          type="text"
+          type="password"
           className={cls.input}
           onChange={onChangePassword}
           value={password}
